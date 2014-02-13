@@ -1,0 +1,133 @@
+/******************************************************************
+Site Name: BitTorrent Blog 2.0
+Author: Dan Brown
+
+Stylesheet: Featured Post Section
+
+******************************************************************/
+
+#featured-posts {
+	display: none;
+	@media (min-width: @screen-md-min) {
+		display: block;
+	}
+
+}
+
+// Big-ass photo on front page (featured-main)
+
+.featured {
+	background-size: cover !important;
+	background-position: center center;
+	display: inline-block;
+	width: 100%;
+	&.gap {
+		margin-top: @grid-gutter-width;
+	}
+	.title {
+		padding: 20px;
+		text-align: left;
+		color: #fff;
+		h2 {
+			font-weight: 300;
+			font-size: 50px;
+			margin: 0;
+		}
+	}
+	.title-background {
+		background-color: rgba(0, 0, 0, 0.6);
+		height: 100%;
+		.transition(background-color .3s ease);
+		&:hover {
+			background-color: rgba(0, 0, 0, .75);
+		}
+	}
+}
+
+.featured-mid {
+	hr {
+		border-top: 1px solid @bt-gray-light;
+		margin-top: 10px;
+		margin-bottom: @grid-gutter-width*3;
+	}
+}
+
+// The Big-ass photo on index
+.first {
+	height: 390px;
+}
+
+
+// The smaller featured photo size (used up top and mid)
+.second{
+	height: 190px;
+
+}
+
+// The shorter featured photo size used on second row of mid section on index
+.third {
+	height: 190px;
+}
+
+
+
+.title {
+	a {
+	text-decoration: none;
+	color: #FFF;
+	}
+
+}
+
+// box after top featured photos
+.latest-div {
+	height: 30px;
+	background-color: @bt-gray-lighter;
+	margin: @grid-gutter-width 0;
+	color: #fff;
+	line-height: 30px;
+	text-align: center;
+}
+
+// "Read more about" header above mid featured section
+.divider {
+  margin: 30px 0 0;
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  text-align: center;
+}
+
+.line-left {
+  background: none repeat scroll 0 0 @bt-gray-light;
+  height: 1px;
+  left: 0;
+  margin-left: -25px;
+  position: absolute;
+  top: 25px;
+  width: 50%;
+  z-index: -1;
+}
+.line-right {
+  background: none repeat scroll 0 0 @bt-gray-light;
+  height: 1px;
+  right: 0;
+  margin-right: -25px;
+  position: absolute;
+  top: 25px;
+  width: 50%;
+  z-index: -1;
+}
+
+.divider .mid {
+  color: @bt-gray-light;
+  display: inline-block;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+  width: auto;
+  background: #e6e6e6;
+  z-index: 9999;
+  padding: 0 10px
+}
+
