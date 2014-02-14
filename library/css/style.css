@@ -7531,7 +7531,7 @@ These are the styles for posts, pages, archive, & blog index
 02. ARTICLE WRAPPER
 (background, borders etc for individual posts/pages)
 ********************************/
-.hentry,
+.loop-post,
 #comments,
 .respond-form {
   margin: 0 0 10px 0;
@@ -7629,9 +7629,6 @@ These are the styles for posts, pages, archive, & blog index
 /*******************************
 05. ENTRY CONTENT
 ********************************/
-.entry-content {
-  padding: 0 30px 30px;
-}
 .entry-content p {
   margin-bottom: 20px;
   font-size: 16px;
@@ -7664,6 +7661,9 @@ These are the styles for posts, pages, archive, & blog index
   padding: 10px;
 }
 /* end entry-content */
+.loop-post .entry-content {
+  padding: 0 30px 30px;
+}
 /*******************************
 06. ENTRY FOOTER
 ********************************/
@@ -8059,12 +8059,70 @@ Stylesheet: Featured Post Section
   color: #999999;
   display: inline-block;
   font-size: 14px;
-  height: 50px;
+  height: 40px;
   line-height: 50px;
   width: auto;
   background: #e6e6e6;
   z-index: 9999;
   padding: 0 10px;
+}
+/******************************************************************
+Site Name: BitTorrent Blog 2.0
+Author: Dan Brown
+
+Stylesheet: Single Post Styles
+
+******************************************************************/
+.single-featured {
+  background-size: cover !important;
+  background-position: center center;
+  width: 100%;
+}
+.single-featured .title-background {
+  height: 390px;
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC42NSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+  /* IE6-8 */
+}
+.single-featured .title {
+  padding: 200px 70px 10px;
+  color: #fff;
+}
+.single-main {
+  background: #fff;
+}
+.single-top {
+  border-top: solid 6px #7665ac;
+  width: 800px;
+  margin: -56px auto 0;
+  height: 56px;
+  background: #fff;
+}
+.single-post .hentry {
+  background: url('../images/gradient.png') #ffffff no-repeat;
+}
+.single-post .hentry .single-pad {
+  padding: 0 100px;
+}
+blockquote {
+  padding: 0px 9px;
+  margin: 30px 0 30px -30px;
+  font-size: 17.5px;
+  border-left: 2px solid #7665ac;
+  font-style: italic;
 }
 /*
 RETINA (2x RESOLUTION DEVICES)

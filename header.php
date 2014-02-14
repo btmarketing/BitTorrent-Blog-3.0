@@ -36,6 +36,13 @@
 
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
+		<!--[if gte IE 9]>
+  	<style type="text/css">
+    	.gradient {
+      	filter: none;
+    	}
+  	</style>
+		<![endif]-->
 
 	</head>
 

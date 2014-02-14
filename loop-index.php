@@ -4,7 +4,7 @@
     the_post();
     ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'loop-post clearfix' ); ?> role="article">
 
 		<header class="article-header">
 			<div class="titlewrap clearfix">
@@ -119,7 +119,7 @@
 while ( have_posts() ) : 
 	the_post(); ?>
 	<div class="item col-md-6">
-		<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
+		<article id="post-<?php the_ID(); ?>" <?php post_class( 'loop-post clearfix' ); ?> role="article">
 
 			<header class="article-header">
 				<div class="titlewrap clearfix">

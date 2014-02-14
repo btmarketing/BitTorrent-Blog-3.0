@@ -87,6 +87,7 @@ add_image_size( 'post-featured', 750, 300, true );
 add_image_size( 'featured-main', 630, 390, true );
 add_image_size( 'featured-secondary', 310, 190, true );
 add_image_size( 'featured-long', 470, 190, true );
+add_image_size( 'featured-single', 950, 390, true );
 /*
 to add more sizes, simply copy a line from above
 and change the dimensions & name. As long as you
@@ -106,6 +107,14 @@ for the 600 x 100 image:
 You can change the names and dimensions to whatever
 you like. Enjoy!
 */
+
+/********** ADD SHORTCODES ********************/
+
+function make_wide( $attr, $content = null ) {
+    return '</div><div class="wide">' . $content . '</div><div class="single-pad">';
+}
+
+add_shortcode('wide', 'make_wide');
 
 /********** ADD GOOGLE FONTS ********************/
 

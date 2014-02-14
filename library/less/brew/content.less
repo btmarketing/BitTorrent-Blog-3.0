@@ -39,7 +39,7 @@ These are the styles for posts, pages, archive, & blog index
 (background, borders etc for individual posts/pages)
 ********************************/
 
-.hentry, #comments, .respond-form {
+.loop-post, #comments, .respond-form {
   margin: 0 0 @grid-gutter-width 0;
   border-radius: 0px;
   background: #fff;
@@ -155,9 +155,9 @@ These are the styles for posts, pages, archive, & blog index
 05. ENTRY CONTENT
 ********************************/
 
+
 // all content
 .entry-content {
-	padding: 0 @bt-margin @bt-margin;
   p {
     margin-bottom: 20px;
     font-size: 16px;
@@ -220,6 +220,11 @@ These are the styles for posts, pages, archive, & blog index
 // specific content
 .page-content {}
 .single-content {}
+.loop-post {
+  .entry-content {
+    padding: 0 @bt-margin @bt-margin;
+  }
+}
 
 // captions
 .wp-caption {

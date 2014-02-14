@@ -2,53 +2,36 @@
       
     <div class="container">  
 
-			<div id="content" class="clearfix row">
+			<div id="content" class="clearfix">
 
-				<div id="main" class="col-md-8 clearfix" role="main">
+				<div id="main" class="single-main clearfix" role="main">
 
-        		<?php get_template_part( 'breadcrumb' ); ?>
-
+					<!-- Featured image and title -->
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
+					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-single' ); ?>
+							<div class="single-featured" style="background: url('<?php echo $image[0]; ?>')">
+								<div class="title-background">
+									<header class="article-header">
+									<div class="title">
+										<h2><?php the_title(); ?></h2>
+										<p class="byline vcard">
+											by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> on 
+											<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
+											<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
+										</p>
+									</div>
+									</header>
+								</div>
+							</div>
+						
+						<div class="single-top"></div>
 						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-							<header class="article-header">
-								<div class="titlewrap clearfix">
-									<h1 class="single-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									<p class="byline vcard">
-										by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> - 
-										<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
-										<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
-									</p>
-								</div>
 
-							</header> <?php // end article header ?>
 
-							<?php global $bt_options; ?>
-							<?php if( $bt_options['featured'] == '2' || ( $bt_options['featured'] == '4' && is_single() ) || ( $bt_options['featured'] == '3' && is_home() ) ) { ?>
-								<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-featured' ); ?>
-								<?php if ( $image[1] < '750' && has_post_thumbnail() ) { ?>
-									<section class="featured-content featured-img featured-img-bg" style="background: url('<?php echo $image[0]; ?>')">
-								<?php } // end if 
-								else { ?>
-									<section class="featured-content featured-img">
-										<?php if ( has_post_thumbnail() ) { ?>
-		                                    <a class="featured-img" href="<?php the_permalink(); ?>">
-		                                    	<?php the_post_thumbnail( 'post-featured' ); ?>
-		                                    </a>
-			                            <?php } // end if 
-										else { ?>
-			                            	<hr>
-			                            <?php } //end else?>
-				                <?php } // end else ?>
-							<?php } // end if 
-							else { ?>
-								<section class="featured-content featured-img">
-							<?php } // end else ?>
-
-							</section>
 
 							<section class="entry-content single-content clearfix" itemprop="articleBody">
+							<div class="single-pad">
 								<?php the_content(); ?>
 								<?php wp_link_pages(
                                 	array(
@@ -57,6 +40,7 @@
                                         'after' => '</div>'
                                 	) 
                                 ); ?>
+              </div>
 							</section> <?php // end article section ?>
 
 							<footer class="article-footer single-footer clearfix">
@@ -90,8 +74,6 @@
 					<?php endif; ?>
 
 				</div> <?php // end #main ?>
-
-				<?php get_sidebar(); ?>
 
 			</div> <?php // end #content ?>
 
