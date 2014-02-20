@@ -7442,8 +7442,7 @@ Stylesheet: Footer
 
 ******************************************************************/
 #footer {
-  border-top: 5px solid #3399ff;
-  background: #3b3b3b;
+  background: #333333;
   padding-top: 30px;
   margin-top: 60px;
   clear: both;
@@ -7471,7 +7470,7 @@ Stylesheet: Footer
 }
 #sub-floor {
   color: #aaa;
-  background: #292929;
+  background: #333333;
   padding: 10px 0;
 }
 .copyright {
@@ -7711,10 +7710,68 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-.nav {
+nav .nav {
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
+}
+@media (min-width: 768px) {
+  nav .nav {
+    display: none;
+  }
+}
+/* end .nav */
+.catnav {
+  background: #f2f2f2;
+  margin-top: 10px;
+  display: none;
+}
+@media (min-width: 768px) {
+  .catnav {
+    display: block;
+  }
+}
+.catnav .navbar {
+  margin-bottom: 0;
+  min-height: 0;
+}
+.catnav .dropdown-menu {
+  background: #f2f2f2;
+  border: 0;
+}
+.catnav .nav {
+  /* end .menu li */
+  /* highlight current page */
+  /* end current highlighters */
+}
+.catnav .nav li {
+  font-size: 13px;
+  text-align: justify;
+}
+@media (min-width: 768px) {
+  .catnav .nav li {
+    width: 118px;
+  }
+}
+@media (min-width: 992px) {
+  .catnav .nav li {
+    width: 154px;
+  }
+}
+.catnav .nav li a {
+  text-align: center;
+  color: #4d4d4d;
+  padding: 10px 0px;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.catnav .nav li a:hover,
+.catnav .nav li a:focus {
+  background: none;
+  color: #808080;
+}
+.catnav .nav li .dropdown-menu a {
+  padding: 10px 15px;
 }
 /* end .nav */
 /******************************************************************
@@ -7774,25 +7831,48 @@ next/previous posts
 /***********************************
 Next/Previous buttons under posts
 ***********************************/
+#single-post-nav {
+  display: none;
+}
+@media (min-width: 768px) {
+  #single-post-nav {
+    display: block;
+  }
+}
 #single-post-nav .pager span {
   width: 100%;
   text-align: center;
   padding: 10px 10px;
-  border-radius: 5px;
+  border-radius: 0px;
+  border: none;
 }
 @media (min-width: 992px) {
   #single-post-nav .pager span {
-    width: auto;
+    width: 469px;
     padding: 5px 10px;
   }
 }
+.pager {
+  margin-top: 2px;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .pager {
+    margin: 2px 0;
+  }
+}
 .pager .previous-page {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 @media (min-width: 992px) {
   .pager .previous-page {
     float: left;
     margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  .pager .previous-page {
+    margin-bottom: 2px;
   }
 }
 @media (min-width: 992px) {
@@ -7816,14 +7896,57 @@ Next/Previous buttons under posts
 AUTHOR BOX
 *********************/
 #author-info {
-  padding: 20px;
+  background: #fff;
+  margin-top: 0px;
+  padding: 0px 5% 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #author-info h4 {
   margin-top: 0;
 }
+@media (min-width: 992px) {
+  #author-info {
+    padding: 0px 90px 0px;
+  }
+}
+.author-wrap {
+  width: 100%;
+  padding: 20px 0 20px;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+@media (min-width: 992px) {
+  .author-wrap {
+    width: 740px;
+  }
+}
+@media (min-width: 768px) {
+  .author-wrap {
+    padding: 50px 0 60px;
+    border-bottom: none;
+  }
+}
 .author-img {
   float: left;
   margin-right: 20px;
+  text-align: center;
+  width: 100%;
+}
+.author-img img {
+  border-radius: 50%;
+}
+@media (min-width: 768px) {
+  .author-img {
+    text-align: left;
+    width: auto;
+  }
+}
+.author-desc {
+  min-height: 96px;
+  text-align: center;
+  width: 100%;
+  min-height: 100%;
 }
 @media (min-width: 480px) {
   .author-desc {
@@ -7831,6 +7954,22 @@ AUTHOR BOX
     _overflow: visible;
     zoom: 1;
   }
+}
+@media (min-width: 768px) {
+  .author-desc {
+    text-align: left;
+    width: auto;
+  }
+}
+.author-desc p {
+  color: #999999;
+  font-size: 12px;
+}
+.author-desc span,
+.author-desc span a {
+  color: #cccccc;
+  font-size: 12px;
+  font-decoration: none;
 }
 .social-links {
   float: left;
@@ -7851,6 +7990,14 @@ AUTHOR BOX
 }
 .social-links a:hover {
   color: #333333;
+}
+.profile-links {
+  display: none;
+}
+@media (min-width: 768px) {
+  .profile-links {
+    display: block;
+  }
 }
 /*********************
 BREADCRUMBS
@@ -7981,12 +8128,13 @@ Stylesheet: Featured Post Section
   width: 100%;
 }
 .featured.gap {
-  margin-top: 10px;
+  margin-top: 2px;
 }
 .featured .title {
   padding: 20px;
   text-align: left;
   color: #fff;
+  width: 85%;
 }
 .featured .title h2 {
   font-weight: 300;
@@ -7994,21 +8142,30 @@ Stylesheet: Featured Post Section
   margin: 0;
 }
 .featured .title-background {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
 .featured .title-background:hover {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.featured-mid {
+  padding-bottom: 30px;
+  text-align: center;
 }
 .featured-mid hr {
   border-top: 1px solid #999999;
   margin-top: 10px;
   margin-bottom: 30px;
 }
+@media (min-width: 992px) {
+  .featured-mid {
+    text-align: left;
+  }
+}
 .first {
-  height: 390px;
+  height: 382px;
 }
 .second {
   height: 190px;
@@ -8020,6 +8177,24 @@ Stylesheet: Featured Post Section
   text-decoration: none;
   color: #FFF;
 }
+#featured-top .row,
+.featured-mid .row {
+  margin-left: -2px;
+  margin-right: -2px;
+}
+#featured-top .col-md-6,
+.featured-mid .col-md-6,
+#featured-top .col-md-4,
+.featured-mid .col-md-4,
+#featured-top .col-md-8,
+.featured-mid .col-md-8 {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+#featured-top.row {
+  margin-left: -2px;
+  margin-right: -2px;
+}
 .latest-div {
   height: 30px;
   background-color: #cccccc;
@@ -8029,17 +8204,21 @@ Stylesheet: Featured Post Section
   text-align: center;
 }
 .divider {
-  margin: 30px 0 0;
+  margin: 10px 0 0;
   overflow: hidden;
   position: relative;
   max-width: 100%;
   text-align: center;
 }
+@media (min-width: 992px) {
+  .divider {
+    margin: 30px 0 0;
+  }
+}
 .line-left {
   background: none repeat scroll 0 0 #999999;
   height: 1px;
   left: 0;
-  margin-left: -25px;
   position: absolute;
   top: 25px;
   width: 50%;
@@ -8049,7 +8228,6 @@ Stylesheet: Featured Post Section
   background: none repeat scroll 0 0 #999999;
   height: 1px;
   right: 0;
-  margin-right: -25px;
   position: absolute;
   top: 25px;
   width: 50%;
@@ -8062,9 +8240,13 @@ Stylesheet: Featured Post Section
   height: 40px;
   line-height: 50px;
   width: auto;
-  background: #e6e6e6;
   z-index: 9999;
   padding: 0 10px;
+}
+@media (min-width: 768px) {
+  .divider .mid {
+    background: #e6e6e6;
+  }
 }
 /******************************************************************
 Site Name: BitTorrent Blog 2.0
@@ -8076,37 +8258,66 @@ Stylesheet: Single Post Styles
 .single-featured {
   background-size: cover !important;
   background-position: center center;
-  width: 100%;
 }
 .single-featured .title-background {
-  height: 390px;
+  height: 150px;
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC42NSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65)));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.5)));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
   /* IE6-8 */
 }
+@media (min-width: 480px) {
+  .single-featured .title-background {
+    height: 390px;
+  }
+}
+.single-featured .title-background.none {
+  background: #4d4d4d;
+  height: 100%;
+}
 .single-featured .title {
-  padding: 0 30px 90px;
+  padding: 60px 70px 90px;
   color: #fff;
   position: absolute;
   bottom: 0;
   left: 70px;
   width: 800px;
+  display: none;
 }
-.single-main {
+@media (min-width: 992px) {
+  .single-featured .title {
+    display: block;
+  }
+}
+.single-featured .none .title {
+  position: static;
+}
+.mb {
+  padding: 0px 5% 0;
+}
+.mb h2 {
+  margin-top: 0;
+}
+@media (min-width: 992px) {
+  .mb {
+    display: none;
+  }
+}
+.title.mb {
   background: #fff;
+  padding: 30px 5% 0;
 }
 .single-top {
   border-top: solid 6px #7665ac;
@@ -8114,24 +8325,87 @@ Stylesheet: Single Post Styles
   margin: -56px auto 0;
   height: 56px;
   background: #fff;
+  display: none;
+}
+@media (min-width: 992px) {
+  .single-top {
+    display: block;
+  }
 }
 .single-post .hentry {
-  background: url('../images/gradient.png') #ffffff no-repeat;
+  min-height: 200px;
+  background: #fff;
+  padding-top: 30px;
+}
+@media (min-width: 992px) {
+  .single-post .hentry {
+    padding-top: 0;
+    background: url('../images/gradient.png') #ffffff no-repeat;
+  }
 }
 .single-post .hentry .single-pad {
-  padding: 0 100px;
+  padding: 0 5%;
+}
+@media (min-width: 992px) {
+  .single-post .hentry .single-pad {
+    padding: 0 100px;
+  }
 }
 .single-post .article-header {
   position: absolute;
   height: 390px;
   padding: 0;
 }
+.single-post .container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+@media (min-width: 992px) {
+  .single-post .container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+.single-post #content {
+  background: #fff;
+  padding-top: 0;
+}
+@media (min-width: 768px) {
+  .single-post #content {
+    background: none;
+    padding-top: 10px;
+  }
+}
+.single-post .none .article-header {
+  position: static;
+  height: 100%;
+}
+.wide {
+  padding: 20px 0 30px;
+}
+div.sharedaddy div.sd-block {
+  border-top: 0 !important;
+  padding-top: 40px !important;
+}
+#disqus_thread {
+  padding: 0 5%;
+}
+@media (min-width: 768px) {
+  #disqus_thread {
+    padding: 0;
+  }
+}
 blockquote {
   padding: 0px 9px;
-  margin: 30px 0 30px -30px;
+  margin: 30px 0 30px 0px;
   font-size: 17.5px;
   border-left: 2px solid #7665ac;
   font-style: italic;
+}
+@media (min-width: 992px) {
+  blockquote {
+    margin: 30px 0 30px -30px;
+  }
 }
 /*
 RETINA (2x RESOLUTION DEVICES)

@@ -10,32 +10,60 @@ Stylesheet: Single Post Styles
 .single-featured {
 	background-size: cover !important;
 	background-position: center center;
-	width: 100%;
 	.title-background {
-		height: 390px;
+		height: 150px;
 		/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC42NSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-		background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
-		background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
+		background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.50) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.50))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.50) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.50) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.50) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.50) 100%); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-8 */
+		@media (min-width: @screen-xs) {
+			height: 390px;	
+		}
 	}
+	.title-background.none {
+		background: @bt-gray-dark;
+		height: 100%
+	}
+
 	.title {
-		padding: 0 30px 90px;
+		padding: 60px 70px 90px;
 		color: #fff;
 		position: absolute;
 		bottom: 0;
 		left: 70px;
 		width: 800px;
-
+		display: none;
+		@media (min-width: @screen-md) {
+			display: block;	
+		}
+	}
+	.none .title {
+		position: static;
 	}
 }
 
-.single-main {
+.mb {
+	padding: 0px 5% 0;
+	h2 {
+		margin-top: 0;
+	}
+	@media (min-width: @screen-md) {
+		display: none;	
+	}
+}
+
+.title.mb {
 	background: #fff;
+	padding: 30px 5% 0;
+}
+
+
+.single-main {
 }
 
 .single-top {
@@ -44,29 +72,80 @@ Stylesheet: Single Post Styles
 	margin: -56px auto 0;
 	height: 56px;
 	background: #fff;
+	display: none;
+	@media (min-width: @screen-md) {
+		display: block;	
+	}
 }
 
 
 .single-post .hentry {
-	//margin: 0 70px 10px;
-	background: url('../images/gradient.png') #fff no-repeat;
-	.single-pad {
-		padding: 0 100px;
+	min-height: 200px;
+	background: #fff;
+	padding-top: 30px;
+	@media (min-width: @screen-md) {
+		padding-top: 0;
+		background: url('../images/gradient.png') #fff no-repeat;
 	}
-
+	.single-pad {
+		padding: 0 5%;
+		@media (min-width: @screen-md) {
+			padding: 0 100px;
+		}
+	}
 }
 
-.single-post .article-header {
-	position: absolute;
-	height: 390px;
-	padding: 0;
+.single-post { 
+	.article-header {
+		position: absolute;
+		height: 390px;
+		padding: 0;
+	}
+	.container {
+		padding-left: 0px;
+		padding-right: 0px;	
+		@media (min-width: @screen-md) {
+			padding-left: 5px;
+			padding-right: 5px;	
+		}
+	}
+	#content {
+		background: #fff;
+		padding-top: 0;
+		@media (min-width: @screen-sm) {
+			background: none;
+			padding-top: 10px;
+		}
+	}
 }
 
+.single-post .none .article-header {
+	position: static;
+	height: 100%;
+}
 
+.wide {
+	padding: 20px 0 30px;
+}
+
+div.sharedaddy div.sd-block {
+	border-top: 0 !important;
+	padding-top: 40px !important;
+}
+
+#disqus_thread {
+	padding: 0 5%;
+	@media (min-width: @screen-sm-min) {
+		padding: 0;	
+	}
+}
 blockquote {
 	padding: 0px 9px;
-	margin: 30px 0 30px -30px;
+	margin: 30px 0 30px 0px;
 	font-size: 17.5px;
 	border-left: 2px solid @bt-purple;
 	font-style: italic;
+	@media (min-width: @screen-md) {
+		margin: 30px 0 30px -30px;
+	}
 }

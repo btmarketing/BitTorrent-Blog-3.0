@@ -73,5 +73,24 @@
         </div> 
         
       </nav>
+      <div class="container">
+      <div class="catnav">
+      	<div class="navbar">
+            <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+              <?php bt_cat_nav(); ?>
+
+            </div>
+          </div>
+        </div> 
+      </div>
 
 		</header> <?php // end header ?>

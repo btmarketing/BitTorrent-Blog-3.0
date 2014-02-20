@@ -36,7 +36,10 @@ and more scalable.
 // NAVIGATION
 // you may need to replace .nav with: .navbar-nav (and possibly include .navbar-inverse)
 
-.nav {
+nav .nav {
+	@media (min-width: @screen-sm) {
+		display: none;	
+	}
 
 	li {
 
@@ -45,6 +48,92 @@ and more scalable.
 			&:hover, &:focus {
 
 			}
+		}
+
+		&:first-child {}
+
+		&:last-child {}
+
+		ul.sub-menu,
+		ul.children {
+
+			li {
+
+				a {
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+
+				}
+
+				&:first-child {}
+
+				&:last-child {}
+
+			}
+
+		}
+
+	} /* end .menu li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current_page_ancestor {
+
+		a {}
+
+	}  /* end current highlighters */
+
+} /* end .nav */
+
+// NAVIGATION (CATEGORIES)
+// you may need to replace .nav with: .navbar-nav (and possibly include .navbar-inverse)
+
+.catnav {
+	background: #f2f2f2;
+	margin-top: 10px;
+	display: none;
+	@media (min-width: @screen-sm) {
+		display: block;	
+	}
+	.navbar {
+		margin-bottom: 0;
+		min-height: 0;
+	}
+	.dropdown-menu {
+		background: #f2f2f2;
+		border: 0;
+	}
+}
+
+.catnav .nav {
+
+	li {
+		font-size: 13px;
+		text-align: justify;
+		@media (min-width: @screen-sm-min) {
+			width: 118px;	
+		}
+		@media (min-width: @screen-md-min) {
+			width: 154px;	
+		}
+		a {
+			text-align: center;
+			color: @bt-gray-dark;
+			padding: 10px 0px;
+			.transition(color .3s ease);
+			
+			&:hover, &:focus {
+				background: none;
+				color: lighten(@bt-gray-dark, 20%)
+
+			}
+		}
+		.dropdown-menu a {
+			padding: 10px 15px;
 		}
 
 		&:first-child {}

@@ -13,27 +13,45 @@ next/previous posts
 Next/Previous buttons under posts
 ***********************************/
 
-#single-post-nav .pager span {
-  width: 100%;
-  text-align: center;
-  padding: 10px 10px;
-  border-radius: 5px;
-  @media (min-width: @screen-md) {
-    width: auto;
-    padding: 5px 10px;
+#single-post-nav {
+  display: none;
+  @media (min-width: @screen-sm-min) {
+    display: block;
+  }
+  .pager span {
+    width: 100%;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 0px;
+    border: none;
+    @media (min-width: @screen-md-min) {
+      width: 469px;
+      padding: 5px 10px;
+    }
+  }
+}
+
+.pager {
+  margin-top: 2px;
+  margin: 0;
+  @media (min-width: @screen-sm-min) {
+    margin: 2px 0; 
   }
 }
 
 .pager .previous-page {
-  margin-bottom: 20px;
-  @media (min-width: @screen-md) {
+  margin-bottom: 10px;
+  @media (min-width: @screen-md-min) {
     float: left;
     margin-bottom: 0;
+  }
+  @media (min-width: @screen-sm-min) {
+     margin-bottom: 2px;
   }
 }
 
 .pager .next-page {
-  @media (min-width: @screen-md) {
+  @media (min-width: @screen-md-min) {
     float: right;
   }
 }
@@ -57,20 +75,67 @@ AUTHOR BOX
 *********************/
 
 #author-info {
-  padding: 20px;
+  background: #fff;
+  margin-top: 0px;
+  padding: 0px 5% 0px;
+  margin-left: auto;
+  margin-right: auto;
   h4 { margin-top: 0 };
+  @media (min-width: @screen-md-min) {
+    padding: 0px 90px 0px;
+  }
+}
+
+.author-wrap {
+  width: 100%;
+  padding: 20px 0 20px;
+  border-top: 1px solid @bt-gray-lighter;
+  border-bottom: 1px solid @bt-gray-lighter;
+  @media (min-width: @screen-md-min) {
+    width: 740px;
+  }
+  @media (min-width: @screen-sm-min) {
+    padding: 50px 0 60px;
+    border-bottom: none;
+  }
 }
 
 .author-img {
   float: left;
   margin-right: 20px;
+  text-align: center;
+  width: 100%;
+  img {
+    border-radius: 50%;
+  }
+  @media (min-width: @screen-sm-min) {
+    text-align: left; 
+    width: auto;
+  }
 }
 
 .author-desc {
-   @media (min-width: @screen-xs) {
+  min-height: 96px;
+  text-align: center;
+  width: 100%;
+  min-height: 100%;
+  @media (min-width: @screen-xs-min) {
     overflow: hidden;
     _overflow: visible;
     zoom: 1;
+  }
+  @media (min-width: @screen-sm-min) {
+    text-align: left;
+    width: auto; 
+  }
+  p {
+    color: @bt-gray-light;
+    font-size: 12px;
+  }
+  span, span a{
+    color: @bt-gray-lighter;
+    font-size: 12px;
+    font-decoration: none;
   }
 }
 
@@ -94,6 +159,12 @@ AUTHOR BOX
   }
 }
 
+.profile-links {
+  display: none;
+  @media (min-width: @screen-sm-min) {
+    display: block; 
+  }
+}
 
 /*********************
 BREADCRUMBS

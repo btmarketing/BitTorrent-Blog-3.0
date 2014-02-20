@@ -61,13 +61,13 @@
 <?php if (!is_paged()) { ?>
 <?php $the_cat = $bt_options['mid-category'] ?>
 <?php $the_cat_name = get_cat_name( $bt_options['mid-category'] ) ?>
-<div class="divider">
+<div class="divider hidden-xs hidden-sm">
 	<span class="line-left"></span>
-	<span class="mid"><i class="fa fa-list-alt"></i>&nbsp;More in <a href="#"><?php echo $the_cat_name ?></a></span>
+	<span class="mid"><i class="fa fa-list-alt"></i>&nbsp;Latest in <a href="#"><?php echo $the_cat_name ?></a></span>
 	<span class="line-right"></span>
 </div>
 
-<div class="featured-mid">
+<div class="featured-mid hidden-xs hidden-sm">
 	<div class="row">
 		<?php $query = new WP_Query( "category_name=$the_cat_name&posts_per_page=5" ); ?>
 		<?php $n = 0 ?>
@@ -108,10 +108,13 @@
 		<?php endif; endwhile; ?>
 
 	</div> <!-- /row -->
-	<hr>
 </div> <!-- /featured-mid -->
+<div class="latest-div hidden-xs hidden-sm">
+	<i class="fa fa-list-alt"></i><span>&nbsp;Other Posts</span>
+</div>
 <?php } ?>
 <!-- END secondary-feature -->
+
 
 <!-- CONTINUE LOOP -->
 <div class="row double">
