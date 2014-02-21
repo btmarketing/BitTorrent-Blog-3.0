@@ -50,7 +50,7 @@ and more scalable.
 		line-height: 20px;
 		.transition(color .4s ease);
 		&:hover, &:focus {
-			color: darken(#e6e6e6, 10%)
+			color: @bt-blue-lighter;
 		}
 	}
 	.sociallist, .slidesearch {
@@ -64,7 +64,7 @@ and more scalable.
 			cursor: pointer;
 			.transition(color .4s ease);
 			&:hover, &:focus {
-				color: darken(#e6e6e6, 10%)
+				color: @bt-blue-lighter;
 			}
 		}
 		label {
@@ -113,8 +113,8 @@ and more scalable.
 
 nav .navbar-header {
 	float: none;
-	padding: 0 5px;
-	@media (min-width: @screen-md) {
+	padding: 0 4%;
+	@media (min-width: @screen-sm) {
 		padding: 0 30px;	
 	}
 }

@@ -7,6 +7,29 @@ Just pulling together all the various functions needed for BREW.
 */
 
 
+// remove unwanted p tags
+add_filter( 'the_content', 'remove_empty_p', 20, 1 );
+function remove_empty_p( $content ){
+  // clean up p tags around block elements
+  $content = preg_replace( array(
+    '#<p>\s*<(div|aside|section|article|header|footer)#',
+    '#</(div|aside|section|article|header|footer)>\s*</p>#',
+    '#</(div|aside|section|article|header|footer)>\s*<br ?/?>#',
+    '#<(div|aside|section|article|header|footer)(.*?)>\s*</p>#',
+    '#<p>\s*</(div|aside|section|article|header|footer)#',
+  ), array(
+    '<$1',
+    '</$1>',
+    '</$1>',
+    '<$1$2>',
+    '</$1',
+  ), $content );
+ 
+  return preg_replace('#<p>(\s|&nbsp;)*+(<br\s*/*>)*(\s|&nbsp;)*</p>#i', '', $content);
+}
+
+
+
 //Read more text > bootstrap button
 
 function my_more_link( $link, $link_button ) {
@@ -45,7 +68,7 @@ function emm_paginate($args = null) {
     $output = "";
     if ($pages > 1) {   
         $output .= "$before";
-        $ellipsis = "<li>...</li>";
+        $ellipsis = "<li></li>";
 
         if ($page > 1 && !empty($previouspage)) {
             $output .= "<li><a href='" . get_pagenum_link($page - 1) . "'>$previouspage</a></li>";

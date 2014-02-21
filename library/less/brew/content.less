@@ -53,7 +53,10 @@ These are the styles for posts, pages, archive, & blog index
 
 // all headers
 .article-header, {
-  padding: @bt-margin @bt-margin;
+  padding: 15px 4%;
+  @media (min-width: @screen-md-min) {
+     padding: @bt-margin @bt-margin;
+  }
   h1, h2, h3, h4, h5, h6 {margin-top: 0;}
 }
 
@@ -67,9 +70,9 @@ These are the styles for posts, pages, archive, & blog index
 .entry-title {
   margin: 0 0 5px;
   font-weight: 400;
-  font-size: 28px;
-  @media (min-width: @screen-md) {
-    font-size: 28px;
+  font-size: 20px;
+  @media (min-width: @screen-sm) {
+    font-size: 24px;
   }
   line-height: 1.2;
   a, a:visited { 
@@ -90,15 +93,15 @@ These are the styles for posts, pages, archive, & blog index
 }
 
 .byline {
-  color: @bt-gray-light;
+  color: @bt-gray-lighter;
   margin: 0;
   font-size: 14px;
   time {}
   .author a {
-    color: @bt-gray-light;
+    color: @bt-gray-lighter;
     .transition(color .2s ease);
     &:hover {
-      color: darken(@bt-gray-light, 10%);
+      color: darken(@bt-gray-lighter, 10%);
       text-decoration: none;
     }
   }
@@ -222,7 +225,10 @@ These are the styles for posts, pages, archive, & blog index
 .single-content {}
 .loop-post {
   .entry-content {
-    padding: 0 @bt-margin @bt-margin;
+    padding: 0 4% 15px;
+    @media (min-width: @screen-md) {
+      padding: 0 @bt-margin @bt-margin;
+    }
   }
 }
 
@@ -262,7 +268,10 @@ These are the styles for posts, pages, archive, & blog index
 
 // loop footer + single footer
 .article-footer  {
-  padding: (@bt-margin / 2) @bt-margin;
+  padding: (@bt-margin / 2) 4%;
+  @media (min-width: @screen-md) {
+    padding: (@bt-margin / 2) @bt-margin;
+  }
   background: #f2f2f2;
   color: @bt-gray-light;
   font-size: 12px;

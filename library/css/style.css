@@ -7547,7 +7547,12 @@ These are the styles for posts, pages, archive, & blog index
 03. ENTRY HEADER
 ********************************/
 .article-header {
-  padding: 30px 30px;
+  padding: 15px 4%;
+}
+@media (min-width: 992px) {
+  .article-header {
+    padding: 30px 30px;
+  }
 }
 .article-header h1,
 .article-header h2,
@@ -7560,12 +7565,12 @@ These are the styles for posts, pages, archive, & blog index
 .entry-title {
   margin: 0 0 5px;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 20px;
   line-height: 1.2;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .entry-title {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 .entry-title a,
@@ -7583,17 +7588,17 @@ These are the styles for posts, pages, archive, & blog index
   margin-top: 0;
 }
 .byline {
-  color: #999999;
+  color: #cccccc;
   margin: 0;
   font-size: 14px;
 }
 .byline .author a {
-  color: #999999;
+  color: #cccccc;
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
 .byline .author a:hover {
-  color: #808080;
+  color: #b3b3b3;
   text-decoration: none;
 }
 /* post by id (i.e. post-3) */
@@ -7667,16 +7672,26 @@ These are the styles for posts, pages, archive, & blog index
 }
 /* end entry-content */
 .loop-post .entry-content {
-  padding: 0 30px 30px;
+  padding: 0 4% 15px;
+}
+@media (min-width: 992px) {
+  .loop-post .entry-content {
+    padding: 0 30px 30px;
+  }
 }
 /*******************************
 06. ENTRY FOOTER
 ********************************/
 .article-footer {
-  padding: 15px 30px;
+  padding: 15px 4%;
   background: #f2f2f2;
   color: #999999;
   font-size: 12px;
+}
+@media (min-width: 992px) {
+  .article-footer {
+    padding: 15px 30px;
+  }
 }
 .article-footer .commentnum {
   text-align: right;
@@ -7737,7 +7752,7 @@ and more scalable.
 }
 .socialtop a:hover,
 .socialtop a:focus {
-  color: #cdcdcd;
+  color: #66b3ff;
 }
 .socialtop .sociallist,
 .socialtop .slidesearch {
@@ -7753,7 +7768,7 @@ and more scalable.
 }
 .socialtop .slidesearch i:hover,
 .socialtop .slidesearch i:focus {
-  color: #cdcdcd;
+  color: #66b3ff;
 }
 .socialtop .slidesearch label {
   margin: 0;
@@ -7791,9 +7806,9 @@ and more scalable.
 }
 nav .navbar-header {
   float: none;
-  padding: 0 5px;
+  padding: 0 4%;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   nav .navbar-header {
     padding: 0 30px;
   }
@@ -8021,6 +8036,7 @@ AUTHOR BOX
 @media (min-width: 992px) {
   .author-wrap {
     width: 740px;
+    min-height: 206px;
   }
 }
 @media (min-width: 768px) {
@@ -8165,11 +8181,11 @@ Stylesheet: Featured Post Section
 }
 .featured .title h2 {
   font-weight: 300;
-  font-size: 50px;
+  font-size: 42px;
   margin: 0;
 }
 .featured.first .title {
-  padding: 60px 30px 0;
+  padding: 30px 30px 0;
 }
 .featured.second .title {
   padding: 30px;
@@ -8474,7 +8490,11 @@ Stylesheet: Single Post Styles
   height: 100%;
 }
 .wide {
-  padding: 20px 0 30px;
+  padding: 30px 0 30px;
+}
+.wide img {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 div.sharedaddy div.sd-block {
   border-top: 0 !important;

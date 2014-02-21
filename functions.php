@@ -83,7 +83,8 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
-add_image_size( 'post-featured', 750, 300, true );
+add_image_size( 'post-grid', 465, auto, false );
+add_image_size( 'post-featured', 940, 564, true );
 add_image_size( 'featured-main', 630, 390, true );
 add_image_size( 'featured-secondary', 310, 190, true );
 add_image_size( 'featured-long', 470, 190, true );
@@ -206,9 +207,6 @@ function bones_register_sidebars() {
 
 	*/
 } // don't remove this bracket!
-
-
-
 
 
 /************* COMMENT LAYOUT *********************/
