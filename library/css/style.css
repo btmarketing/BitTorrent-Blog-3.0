@@ -7043,7 +7043,7 @@ This stylesheet contains various snippets of CSS needed for WP Core
   word-wrap: break-word;
 }
 .alignnone {
-  margin: 5px 20px 20px 0;
+  margin: 20px 20px 20px 0;
 }
 .aligncenter,
 div.aligncenter {
@@ -7052,22 +7052,22 @@ div.aligncenter {
 }
 .alignright {
   float: right;
-  margin: 5px 0 20px 20px;
+  margin: 20px 0 20px 20px;
 }
 .alignleft {
   float: left;
-  margin: 5px 20px 20px 0;
+  margin: 20px 20px 20px 0;
 }
 .aligncenter {
   display: block;
-  margin: 5px auto 5px auto;
+  margin: 20px auto 20px auto;
 }
 a img.alignright {
   float: right;
-  margin: 5px 0 20px 20px;
+  margin: 20px 0 20px 20px;
 }
 a img.alignnone {
-  margin: 5px 20px 20px 0;
+  margin: 20px 20px 20px 0;
 }
 a img.alignleft {
   float: left;
@@ -7122,8 +7122,16 @@ Stylesheet: Global Stylesheet
 Styles and classes used throughout the entire BREW framework
 
 ******************************************************************/
-body {
-  padding-top: 50px;
+/*********************
+ADMIN TOP NAV FIXES
+*********************/
+body.admin-bar .navbar-fixed-top {
+  top: 46px;
+}
+@media (min-width: 783px) {
+  body.admin-bar .navbar-fixed-top {
+    top: 28px;
+  }
 }
 /******************************************************************
 Site Name: BREW
@@ -7442,7 +7450,7 @@ Stylesheet: Footer
 
 ******************************************************************/
 #footer {
-  background: #333333;
+  background: #222;
   padding-top: 30px;
   margin-top: 60px;
   clear: both;
@@ -7450,19 +7458,17 @@ Stylesheet: Footer
 }
 #footer h4 {
   color: #fff;
-  text-transform: uppercase;
 }
 #footer a {
   color: #aaa;
 }
 #footer li {
-  padding: 7px 0;
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  padding: 3px 0;
   margin: 0px 0px;
 }
 #footer .widgettitle {
   margin: 0;
-  padding: 0 0 15px 0;
+  padding: 0 0 8px 0;
   border-bottom: none;
 }
 #footer-wrapper {
@@ -7710,6 +7716,116 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+.socialtop {
+  float: right;
+}
+.socialtop ul {
+  padding-left: 5px;
+  margin: 0;
+}
+.socialtop li {
+  float: left;
+  list-style-type: none;
+  padding: 14px 10px;
+}
+.socialtop a {
+  color: #e6e6e6;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+.socialtop a:hover,
+.socialtop a:focus {
+  color: #cdcdcd;
+}
+.socialtop .sociallist,
+.socialtop .slidesearch {
+  float: right;
+}
+.socialtop .slidesearch i {
+  padding: 16px 0;
+  color: #e6e6e6;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+.socialtop .slidesearch i:hover,
+.socialtop .slidesearch i:focus {
+  color: #cdcdcd;
+}
+.socialtop .slidesearch label {
+  margin: 0;
+}
+.socialtop .slidesearch ::-webkit-input-placeholder {
+  color: #666666;
+  font-weight: 300;
+}
+.socialtop .search-field {
+  background-color: transparent;
+  background-position: 5px center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  border: none;
+  cursor: pointer;
+  height: 29px;
+  margin: 3px 0 0;
+  padding: 0 0 0 2px;
+  position: relative;
+  -webkit-transition: width 400ms ease, background 400ms ease;
+  transition: width 400ms ease, background 400ms ease;
+  width: 0;
+  color: #e6e6e6;
+  font-weight: 300;
+}
+.socialtop .search-field:focus {
+  border-bottom: 1px solid #666666;
+  cursor: text;
+  outline: 0;
+  width: 230px;
+  margin-right: 5px;
+}
+.socialtop .search-form .search-submit {
+  display: none;
+}
+nav .navbar-header {
+  float: none;
+  padding: 0 5px;
+}
+@media (min-width: 992px) {
+  nav .navbar-header {
+    padding: 0 30px;
+  }
+}
+.single .navbar-header {
+  padding: 0 5%;
+}
+@media (min-width: 768px) {
+  .single .navbar-header {
+    padding: 0 0;
+  }
+}
+@media (min-width: 992px) {
+  .single .navbar-header {
+    padding: 0;
+  }
+}
+.navbar-toggle {
+  background: none;
+  border: 0;
+  padding: 9px 0;
+}
+.navbar-toggle:focus {
+  background-color: transparent !important;
+}
+.navbar-nav > .active > a:focus {
+  background-color: transparent !important;
+}
+nav .navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
 nav .nav {
   /* end .menu li */
   /* highlight current page */
@@ -7831,9 +7947,6 @@ next/previous posts
 /***********************************
 Next/Previous buttons under posts
 ***********************************/
-#single-post-nav {
-  display: none;
-}
 @media (min-width: 768px) {
   #single-post-nav {
     display: block;
@@ -7853,26 +7966,15 @@ Next/Previous buttons under posts
   }
 }
 .pager {
-  margin-top: 2px;
-  margin: 0;
-}
-@media (min-width: 768px) {
-  .pager {
-    margin: 2px 0;
-  }
+  margin: 2px 0;
 }
 .pager .previous-page {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 @media (min-width: 992px) {
   .pager .previous-page {
     float: left;
     margin-bottom: 0;
-  }
-}
-@media (min-width: 768px) {
-  .pager .previous-page {
-    margin-bottom: 2px;
   }
 }
 @media (min-width: 992px) {
@@ -7914,7 +8016,7 @@ AUTHOR BOX
   width: 100%;
   padding: 20px 0 20px;
   border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
+  min-height: 136px;
 }
 @media (min-width: 992px) {
   .author-wrap {
@@ -7930,22 +8032,12 @@ AUTHOR BOX
 .author-img {
   float: left;
   margin-right: 20px;
-  text-align: center;
-  width: 100%;
 }
 .author-img img {
   border-radius: 50%;
 }
-@media (min-width: 768px) {
-  .author-img {
-    text-align: left;
-    width: auto;
-  }
-}
 .author-desc {
   min-height: 96px;
-  text-align: center;
-  width: 100%;
   min-height: 100%;
 }
 @media (min-width: 480px) {
@@ -7953,12 +8045,6 @@ AUTHOR BOX
     overflow: hidden;
     _overflow: visible;
     zoom: 1;
-  }
-}
-@media (min-width: 768px) {
-  .author-desc {
-    text-align: left;
-    width: auto;
   }
 }
 .author-desc p {
@@ -8021,98 +8107,21 @@ PAGINATION
 }
 /* end pagination */
 /******************************************************************
-Site Name: BREW Styles
-Author: Dan Brown
-
-Stylesheet: Tables
-
-This is just for the sample BREW site.  Feel free to delete
-
-******************************************************************/
-.featured {
-  margin-bottom: 40px;
-}
-@media (min-width: 992px) {
-  .featured {
-    margin-bottom: 0;
-  }
-}
-.homebanner {
-  margin-bottom: 60px;
-  padding-top: 30px;
-  text-align: center;
-  height: 350px;
-  background: url('../images/hero.png') #2a5781;
-  background-size: cover;
-  background-position: center center;
-  color: #fff;
-}
-@media (min-width: 480px) {
-  .homebanner {
-    padding-top: 70px;
-  }
-}
-.homebanner p {
-  font-size: 18px;
-}
-.homebanner h1 {
-  font-size: 50px;
-  color: #fff;
-  margin-bottom: 10px;
-}
-.homebanner .btn-default {
-  background: none;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-.homebanner .btn-primary {
-  background: none;
-  border: 2px solid #fff;
-  margin-left: 20px;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-.homebanner .btn-default:hover {
-  background: white;
-  color: #000;
-}
-.homebanner .btn-primary:hover {
-  background: white;
-  color: #000;
-}
-.about {
-  margin-bottom: 30px;
-}
-@media (min-width: 768px) {
-  .about {
-    margin-bottom: 0px;
-  }
-}
-.about a {
-  text-decoration: none;
-}
-.about i {
-  color: #929292;
-}
-.about p {
-  color: #929292;
-}
-.about h3 {
-  color: #626c72;
-}
-.about:hover i {
-  color: #626c72;
-  transition: all 0.35s ease;
-}
-/******************************************************************
 Site Name: BitTorrent Blog 2.0
 Author: Dan Brown
 
 Stylesheet: Featured Post Section
 
 ******************************************************************/
+.no-svg #featured-top {
+  display: none;
+}
+.no-svg .featured-mid {
+  display: none;
+}
+.no-svg .divider {
+  display: none;
+}
 #featured-posts {
   display: none;
 }
@@ -8121,17 +8130,35 @@ Stylesheet: Featured Post Section
     display: block;
   }
 }
+#featured-top {
+  display: none;
+}
+@media (min-width: 768px) {
+  #featured-top {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+  #featured-top {
+    margin-bottom: 10px;
+  }
+}
 .featured {
+  padding: 0 !important;
   background-size: cover !important;
   background-position: center center;
   display: inline-block;
-  width: 100%;
 }
 .featured.gap {
-  margin-top: 2px;
+  margin-left: 2px;
+}
+@media (min-width: 992px) {
+  .featured.gap {
+    margin-left: 0;
+    margin-top: 2px;
+  }
 }
 .featured .title {
-  padding: 20px;
   text-align: left;
   color: #fff;
   width: 85%;
@@ -8139,6 +8166,15 @@ Stylesheet: Featured Post Section
 .featured .title h2 {
   font-weight: 300;
   font-size: 50px;
+  margin: 0;
+}
+.featured.first .title {
+  padding: 60px 30px 0;
+}
+.featured.second .title {
+  padding: 30px;
+}
+.featured.second .title h4 {
   margin: 0;
 }
 .featured .title-background {
@@ -8166,12 +8202,38 @@ Stylesheet: Featured Post Section
 }
 .first {
   height: 382px;
+  width: 100%;
+  margin-bottom: 2px;
+}
+@media (min-width: 992px) {
+  .first {
+    margin-bottom: 0px;
+  }
 }
 .second {
   height: 190px;
+  width: 360px;
+}
+@media (min-width: 768px) {
+  .second {
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .second {
+    width: 100%;
+    margin-bottom: 0;
+  }
 }
 .third {
   height: 190px;
+  width: 100%;
+}
+.third .title {
+  padding: 30px;
+}
+.third .title h4 {
+  margin: 0;
 }
 .title a {
   text-decoration: none;
@@ -8198,7 +8260,7 @@ Stylesheet: Featured Post Section
 .latest-div {
   height: 30px;
   background-color: #cccccc;
-  margin: 10px 0;
+  margin-bottom: 10px;
   color: #fff;
   line-height: 30px;
   text-align: center;
@@ -8218,23 +8280,34 @@ Stylesheet: Featured Post Section
 .line-left {
   background: none repeat scroll 0 0 #999999;
   height: 1px;
-  left: 0;
+  left: 20px;
   position: absolute;
   top: 25px;
   width: 50%;
   z-index: -1;
+}
+@media (min-width: 768px) {
+  .line-left {
+    left: 0;
+  }
 }
 .line-right {
   background: none repeat scroll 0 0 #999999;
   height: 1px;
-  right: 0;
+  right: 20px;
   position: absolute;
   top: 25px;
   width: 50%;
   z-index: -1;
 }
+@media (min-width: 768px) {
+  .line-right {
+    right: 0;
+  }
+}
 .divider .mid {
   color: #999999;
+  background: #e6e6e6;
   display: inline-block;
   font-size: 14px;
   height: 40px;
@@ -8243,11 +8316,6 @@ Stylesheet: Featured Post Section
   z-index: 9999;
   padding: 0 10px;
 }
-@media (min-width: 768px) {
-  .divider .mid {
-    background: #e6e6e6;
-  }
-}
 /******************************************************************
 Site Name: BitTorrent Blog 2.0
 Author: Dan Brown
@@ -8255,30 +8323,57 @@ Author: Dan Brown
 Stylesheet: Single Post Styles
 
 ******************************************************************/
+.no-textshadow .single-top {
+  display: none;
+}
+.no-textshadow .single-post .hentry {
+  padding-top: 30px;
+  background: #fff;
+}
 .single-featured {
   background-size: cover !important;
   background-position: center center;
 }
 .single-featured .title-background {
-  height: 150px;
-  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  height: 175px;
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC42NSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.5)));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
   /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=0);
   /* IE6-8 */
 }
-@media (min-width: 480px) {
+@media (min-width: 992px) {
+  .single-featured .title-background {
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC42NSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.5)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+    /* IE6-8 */
+    z-index: -1;
+  }
+}
+@media (min-width: 768px) {
   .single-featured .title-background {
     height: 390px;
   }
@@ -8367,12 +8462,10 @@ Stylesheet: Single Post Styles
   }
 }
 .single-post #content {
-  background: #fff;
   padding-top: 0;
 }
 @media (min-width: 768px) {
   .single-post #content {
-    background: none;
     padding-top: 10px;
   }
 }

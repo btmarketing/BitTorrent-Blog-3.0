@@ -33,9 +33,117 @@ and more scalable.
 	}
 }
 
+.socialtop {
+	float:right;
+	ul {
+		padding-left: 5px;
+		margin: 0;
+	}
+	li {
+		float: left;
+		list-style-type: none;
+		padding: 14px 10px;
+	}
+	a {
+		color: #e6e6e6;
+		font-size: 16px;
+		line-height: 20px;
+		.transition(color .4s ease);
+		&:hover, &:focus {
+			color: darken(#e6e6e6, 10%)
+		}
+	}
+	.sociallist, .slidesearch {
+		float: right;
+	}
+	.slidesearch {
+		i {
+			padding: 16px 0;
+			color: #e6e6e6;
+			font-size: 16px;
+			cursor: pointer;
+			.transition(color .4s ease);
+			&:hover, &:focus {
+				color: darken(#e6e6e6, 10%)
+			}
+		}
+		label {
+			margin: 0;
+		}
+	}
+
+	.slidesearch ::-webkit-input-placeholder {
+	    color: @bt-gray;
+	    font-weight: 300;
+	}
+
+	.search-field {
+		background-color: transparent;
+		background-position: 5px center;
+		background-repeat: no-repeat;
+		background-size: 24px 24px;
+		border: none;
+		cursor: pointer;
+		height: 29px;
+		margin: 3px 0 0;
+		padding: 0 0 0 2px;
+		position: relative;
+		-webkit-transition: width 400ms ease, background 400ms ease;
+		transition:         width 400ms ease, background 400ms ease;
+		width: 0;
+		color: #e6e6e6;
+		font-weight: 300;
+	}
+
+	.search-field:focus {
+		border-bottom: 1px solid @bt-gray;
+		cursor: text;
+		outline: 0;
+		width: 230px;
+		margin-right: 5px;
+	}
+
+	.search-form .search-submit { 
+		display:none;
+	}
+}
+
 // NAVIGATION
 // you may need to replace .nav with: .navbar-nav (and possibly include .navbar-inverse)
 
+nav .navbar-header {
+	float: none;
+	padding: 0 5px;
+	@media (min-width: @screen-md) {
+		padding: 0 30px;	
+	}
+}
+
+.single .navbar-header {
+	padding: 0 5%;
+	@media (min-width: @screen-sm) {
+		padding: 0 0;	
+	}
+	@media (min-width: @screen-md) {
+		padding: 0;	
+	}
+}
+
+.navbar-toggle {
+	background: none;
+	border: 0;
+	padding: 9px 0;
+	&:focus {
+		background-color: transparent !important;
+	}
+}
+.navbar-nav > .active > a:focus {
+	background-color: transparent !important;
+}
+nav .navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+}
 nav .nav {
 	@media (min-width: @screen-sm) {
 		display: none;	
@@ -174,3 +282,4 @@ nav .nav {
 	}  /* end current highlighters */
 
 } /* end .nav */
+

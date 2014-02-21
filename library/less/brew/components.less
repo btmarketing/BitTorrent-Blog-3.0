@@ -14,7 +14,6 @@ Next/Previous buttons under posts
 ***********************************/
 
 #single-post-nav {
-  display: none;
   @media (min-width: @screen-sm-min) {
     display: block;
   }
@@ -32,21 +31,14 @@ Next/Previous buttons under posts
 }
 
 .pager {
-  margin-top: 2px;
-  margin: 0;
-  @media (min-width: @screen-sm-min) {
-    margin: 2px 0; 
-  }
+  margin: 2px 0; 
 }
 
 .pager .previous-page {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   @media (min-width: @screen-md-min) {
     float: left;
     margin-bottom: 0;
-  }
-  @media (min-width: @screen-sm-min) {
-     margin-bottom: 2px;
   }
 }
 
@@ -90,7 +82,7 @@ AUTHOR BOX
   width: 100%;
   padding: 20px 0 20px;
   border-top: 1px solid @bt-gray-lighter;
-  border-bottom: 1px solid @bt-gray-lighter;
+  min-height: 136px;
   @media (min-width: @screen-md-min) {
     width: 740px;
   }
@@ -103,21 +95,15 @@ AUTHOR BOX
 .author-img {
   float: left;
   margin-right: 20px;
-  text-align: center;
-  width: 100%;
   img {
     border-radius: 50%;
   }
   @media (min-width: @screen-sm-min) {
-    text-align: left; 
-    width: auto;
   }
 }
 
 .author-desc {
   min-height: 96px;
-  text-align: center;
-  width: 100%;
   min-height: 100%;
   @media (min-width: @screen-xs-min) {
     overflow: hidden;
@@ -125,8 +111,6 @@ AUTHOR BOX
     zoom: 1;
   }
   @media (min-width: @screen-sm-min) {
-    text-align: left;
-    width: auto; 
   }
   p {
     color: @bt-gray-light;

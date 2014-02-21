@@ -5,6 +5,18 @@ Author: Dan Brown
 Stylesheet: Featured Post Section
 
 ******************************************************************/
+// below ie9
+.no-svg {
+	#featured-top {
+		display: none;
+	}
+	.featured-mid {
+		display: none;
+	}
+	.divider {
+		display: none;
+	}
+}
 
 #featured-posts {
 	display: none;
@@ -16,22 +28,43 @@ Stylesheet: Featured Post Section
 
 // Big-ass photo on front page (featured-main)
 
+#featured-top {
+	display: none;
+	@media (min-width: @screen-sm-min) {
+		display: block;	
+	}
+	@media (min-width: @screen-md-min) {
+		margin-bottom: 10px;	
+	}
+}
 .featured {
+	padding: 0 !important;
 	background-size: cover !important;
 	background-position: center center;
 	display: inline-block;
-	width: 100%;
 	&.gap {
-		margin-top: 2px;
+		margin-left: 2px;
+		@media (min-width: @screen-md) {
+			margin-left: 0;
+			margin-top: 2px;
+		}
 	}
 	.title {
-		padding: 20px;
 		text-align: left;
 		color: #fff;
 		width: 85%;
 		h2 {
 			font-weight: 300;
 			font-size: 50px;
+			margin: 0;
+		}
+	}
+	&.first .title {
+		padding: 60px 30px 0;
+	}
+	&.second .title {
+		padding: 30px;
+		h4 {
 			margin: 0;
 		}
 	}
@@ -61,18 +94,38 @@ Stylesheet: Featured Post Section
 // The Big-ass photo on index
 .first {
 	height: 382px;
+	width: 100%;
+	margin-bottom: 2px;
+	@media (min-width: @screen-md) {
+		margin-bottom: 0px;	
+	}
 }
 
 
 // The smaller featured photo size (used up top and mid)
 .second{
 	height: 190px;
-
+	width: 360px;
+	@media (min-width: @screen-sm) {
+		margin-bottom: 10px;	
+	}
+	@media (min-width: @screen-md) {
+		width: 100%;	
+		margin-bottom: 0;
+	}
 }
 
 // The shorter featured photo size used on second row of mid section on index
 .third {
 	height: 190px;
+	width: 100%;
+	.title {
+		padding: 30px;
+		h4 {
+			margin: 0;
+		}
+
+	}
 }
 
 
@@ -105,7 +158,7 @@ Stylesheet: Featured Post Section
 .latest-div {
 	height: 30px;
 	background-color: @bt-gray-lighter;
-	margin: @grid-gutter-width 0;
+	margin-bottom: @grid-gutter-width;
 	color: #fff;
 	line-height: 30px;
 	text-align: center;
@@ -126,24 +179,31 @@ Stylesheet: Featured Post Section
 .line-left {
   background: none repeat scroll 0 0 @bt-gray-light;
   height: 1px;
-  left: 0;
+  left: 20px;
   position: absolute;
   top: 25px;
   width: 50%;
   z-index: -1;
+  @media (min-width: @screen-sm-min) {
+  	left: 0;	
+  }
 }
 .line-right {
   background: none repeat scroll 0 0 @bt-gray-light;
   height: 1px;
-  right: 0;
+  right: 20px;
   position: absolute;
   top: 25px;
   width: 50%;
   z-index: -1;
+  @media (min-width: @screen-sm-min) {
+  	right: 0;	
+  }
 }
 
 .divider .mid {
   color: @bt-gray-light;
+  background: #e6e6e6;
   display: inline-block;
   font-size: 14px;
   height: 40px;
@@ -151,8 +211,5 @@ Stylesheet: Featured Post Section
   width: auto;
   z-index: 9999;
   padding: 0 10px;
-  @media (min-width: @screen-sm-min) {
-  	background: #e6e6e6;
-  }
 }
 

@@ -17,6 +17,10 @@
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
@@ -51,7 +55,7 @@
     <header class="header">
 
       <nav role="navigation">
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse">
           <div class="container">
             <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
             <div class="navbar-header">
@@ -61,13 +65,31 @@
                 <span class="icon-bar"></span>
               </button>
 
-              <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
+              <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><img height="24px" src="<?php echo get_template_directory_uri() . '/library/images/bt-logo-ret.png'; ?>" /></a>
 
-            </div>
+            	<div class="socialtop hidden-xs">
+            		<div class="slidesearch">
+		            	<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+										<label>
+											<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:" />
+											<i class="fa fa-search"></i>
+										</label>
+										<input type="submit" class="search-submit" value="Search" />
+									</form>
+								</div>
+	            	<ul class="sociallist">
+	            		<a href=""><li><i class="fa fa-facebook"></i></li></a>
+	            		<a href=""><li><i class="fa fa-twitter"></i></li></a>
+	            		<a href=""><li><i class="fa fa-youtube-play"></i></li></a>
+	            		<a href=""><li><i class="fa fa-instagram"></i></li></a>
+	            		<a href=""><li><i class="fa fa-rss"></i></li></a>
+	            	</ul>
+	        
+	            </div>
+	          </div>
 
             <div class="navbar-collapse collapse navbar-responsive-collapse">
               <?php bones_main_nav(); ?>
-
             </div>
           </div>
         </div> 
@@ -76,15 +98,6 @@
       <div class="container">
       <div class="catnav">
       	<div class="navbar">
-            <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-
             <div class="navbar-collapse collapse navbar-responsive-collapse">
               <?php bt_cat_nav(); ?>
 

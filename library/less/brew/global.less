@@ -9,5 +9,16 @@ Styles and classes used throughout the entire BREW framework
 ******************************************************************/
 
 body {
-  padding-top: @navbar-height; // THIS IS IF YOU HAVE top-nav-fixed ENABLED
+  //padding-top: @navbar-height; // THIS IS IF YOU HAVE top-nav-fixed ENABLED
+}
+
+/*********************
+ADMIN TOP NAV FIXES
+*********************/
+
+body.admin-bar .navbar-fixed-top {
+  top: 46px;
+  @media (min-width: 783px) {
+    top: 28px;
+  }
 }
