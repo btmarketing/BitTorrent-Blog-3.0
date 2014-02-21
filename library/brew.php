@@ -256,16 +256,6 @@ function brew_contact_methods( $contactmethods ) {
 add_filter( 'user_contactmethods', 'brew_contact_methods' );
 
 
-// make video embeds responsive
-
-wp_enqueue_script('fitvids', get_template_directory_uri() . '/library/js/libs/FitVids.js-master/jquery.fitvids.js', array('jquery'), '', TRUE); 
-
-wp_enqueue_script('fitvids-xtra', get_template_directory_uri() . '/library/js/fitvid.js', array(), '', TRUE);
-
-wp_enqueue_script('get-stuff', get_template_directory_uri() . '/library/js/libs/jquery.isotope.min.js', array(), '', TRUE);
-
-
-
 
 /*
 my mind is going. I can feel it

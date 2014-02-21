@@ -133,14 +133,18 @@ function bones_scripts_and_styles() {
     // modernizr (without media query polyfill)
     wp_register_script( 'bones-modernizr', get_template_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
-    // CSS3 Media Query
-    wp_register_script( 'bt-css3', get_template_directory_uri() . '/library/js/libs/css3-mediaqueries.js', array(), '2.5.3', TRUE );
+    // isotope
+    wp_register_script( 'bt-isotope', get_template_directory_uri() . '/library/js/libs/jquery.isotope.min.js', array(), '', true );
 
     // register main stylesheet
     wp_register_style( 'bones-stylesheet', get_template_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
     // ie-only style sheet
     wp_register_style( 'bones-ie-only', get_template_directory_uri() . '/library/css/ie.css', array(), '' );
+
+    // FitVid (responsive video)
+    wp_register_script( 'fitvids', get_template_directory_uri() . '/library/js/libs/FitVids.js-master/jquery.fitvids.js', array('jquery'), '', TRUE );
+    wp_register_script( 'fitvids-xtra', get_template_directory_uri() . '/library/js/fitvid.js', array(), '', TRUE );
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -153,7 +157,6 @@ function bones_scripts_and_styles() {
 
     // enqueue styles and scripts
     wp_enqueue_script( 'bones-modernizr' );
-    wp_enqueue_script( 'bt-css3' );
     wp_enqueue_style( 'bones-stylesheet' );
     wp_enqueue_style( 'bones-ie-only' );
 
@@ -167,6 +170,9 @@ function bones_scripts_and_styles() {
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'bones-js' );
     wp_enqueue_script( 'bones-bootstrap' );
+    wp_enqueue_script( 'fitvids');
+    wp_enqueue_script( 'fitvids-xtra');
+    wp_enqueue_script( 'bt-isotope');
 
   }
 }
