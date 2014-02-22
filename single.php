@@ -136,7 +136,7 @@
 																<h4><?php the_title(); ?></h4>
 															</div>
 															<div class="featuredByline">
-																by <em></em> on 
+																by <em><?php the_author(); ?> </em> on 
 																<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
 																<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 															</div>
@@ -151,13 +151,18 @@
 										<div class="col-md-6 hidden-xs hidden-sm">
 											<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-long' ); ?>
 											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php if ( has_post_thumbnail() ) { ?>
 												<div class="featured third gap" style="background: url('<?php echo $image[0]; ?>')">
+												<?php } else { 
+													$rand = array_rand($targetArray); ?>
+												<div class="featured third gap" style="background: url('<?php echo $targetArray[$rand]; ?>')">
+												<?php } ?>
 													<div class="title-background">
 														<div class="title">
 															<h4><?php the_title(); ?></h4>
 														</div>
 														<div class="featuredByline">
-															by <em></em> on 
+															by <em><?php the_author(); ?></em> on 
 															<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
 															<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 														</div>

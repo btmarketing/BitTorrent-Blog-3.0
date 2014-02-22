@@ -8246,11 +8246,11 @@ Stylesheet: Featured Post Section
 .first .featuredByline {
   position: absolute;
   left: 30px;
-  top: 330px;
+  top: 340px;
 }
 .second {
   height: 190px;
-  width: 360px;
+  width: 358px;
 }
 @media (min-width: 768px) {
   .second {
@@ -8291,8 +8291,8 @@ Stylesheet: Featured Post Section
 }
 #featured-top .row,
 .featured-mid .row {
-  margin-left: -2px;
-  margin-right: -2px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 #featured-top .col-md-6,
 .featured-mid .col-md-6,
@@ -8304,8 +8304,8 @@ Stylesheet: Featured Post Section
   padding-right: 1px;
 }
 #featured-top.row {
-  margin-left: -2px;
-  margin-right: -2px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .latest-div {
   height: 30px;

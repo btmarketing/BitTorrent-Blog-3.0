@@ -20,7 +20,7 @@
 								<h2><?php the_title(); ?></h2>
 							</div>
 							<div class="featuredByline">
-								by <em></em> on 
+								by <em><?php the_author(); ?></em> on 
 								<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
 								<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 							</div>
@@ -45,7 +45,7 @@
 								<h4><?php the_title(); ?></h4>
 							</div>
 							<div class="featuredByline">
-								by <em></em> on 
+								by <em><?php the_author(); ?> </em> on 
 								<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
 								<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 							</div>
@@ -67,7 +67,7 @@
 								<h4><?php the_title(); ?></h4>
 							</div>
 							<div class="featuredByline">
-								by <em></em> on 
+								by <em><?php the_author(); ?> </em> on 
 								<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
 								<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 							</div>
