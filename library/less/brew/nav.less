@@ -213,11 +213,19 @@ nav .nav {
 	}
 	.dropdown-menu {
 		background: #f2f2f2;
-		border: 0;
+		border: 0;	
+		left: 4px;
+		border-radius: 0;
+		.active a {
+			background: none;
+		}
 	}
 }
 
 .catnav .nav {
+	.dropdown-menu li a {
+		text-align: right;
+	}
 
 	li {
 		font-size: 13px;

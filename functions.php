@@ -84,6 +84,7 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 add_image_size( 'post-grid', 465, auto, false );
+add_image_size( 'featured-test', 940, auto, false );
 add_image_size( 'post-featured', 940, 564, true );
 add_image_size( 'featured-main', 630, 390, true );
 add_image_size( 'featured-secondary', 310, 190, true );
@@ -121,7 +122,7 @@ add_shortcode('wide', 'make_wide');
 
 add_action('init', 'google_font_style'); 
   function google_font_style(){ 
-    wp_register_style( 'GoogleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600'); 
+    wp_register_style( 'GoogleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,Source+Sans+Pro:200'); 
     wp_enqueue_style( 'GoogleFonts' ); 
  }
 

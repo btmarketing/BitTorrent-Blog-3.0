@@ -55,7 +55,8 @@ Stylesheet: Featured Post Section
 		width: 85%;
 		h2 {
 			font-weight: 300;
-			font-size: 42px;
+			font-size: 36px;
+			line-height: 42px;
 			margin: 0;
 		}
 	}
@@ -66,6 +67,9 @@ Stylesheet: Featured Post Section
 		padding: 30px;
 		h4 {
 			margin: 0;
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 300;
 		}
 	}
 	.title-background {
@@ -91,6 +95,9 @@ Stylesheet: Featured Post Section
 	}
 }
 
+.featuredByline, .featuredByline a {
+	color: @bt-gray-light;
+}
 // The Big-ass photo on index
 .first {
 	height: 382px;
@@ -99,6 +106,12 @@ Stylesheet: Featured Post Section
 	@media (min-width: @screen-md) {
 		margin-bottom: 0px;	
 	}
+	.featuredByline {
+		position: absolute;
+		left: 30px;
+		top: 330px;
+	}
+
 }
 
 
@@ -113,6 +126,11 @@ Stylesheet: Featured Post Section
 		width: 100%;	
 		margin-bottom: 0;
 	}
+	.featuredByline {
+		position: absolute;
+		left: 30px;
+		top: 150px;
+	}
 }
 
 // The shorter featured photo size used on second row of mid section on index
@@ -123,12 +141,16 @@ Stylesheet: Featured Post Section
 		padding: 30px;
 		h4 {
 			margin: 0;
+			font-weight: 300;
+			font-size: 16px;
 		}
-
+	}
+	.featuredByline {
+		position: absolute;
+		left: 30px;
+		top: 150px;
 	}
 }
-
-
 
 .title {
 	a {
@@ -157,9 +179,9 @@ Stylesheet: Featured Post Section
 // box after top featured photos
 .latest-div {
 	height: 30px;
-	background-color: @bt-gray-lighter;
+	background-color: #d6d6d6;
 	margin-bottom: @grid-gutter-width;
-	color: #fff;
+	color: @bt-gray-light;
 	line-height: 30px;
 	text-align: center;
 }

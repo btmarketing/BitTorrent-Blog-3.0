@@ -75,11 +75,12 @@
 									</form>
 								</div>
 	            	<ul class="sociallist">
-	            		<a href=""><li><i class="fa fa-facebook"></i></li></a>
-	            		<a href=""><li><i class="fa fa-twitter"></i></li></a>
-	            		<a href=""><li><i class="fa fa-youtube-play"></i></li></a>
-	            		<a href=""><li><i class="fa fa-instagram"></i></li></a>
-	            		<a href=""><li><i class="fa fa-rss"></i></li></a>
+	            		<a target="_blank" href="http://www.facebook.com/bittorrent"><li><i class="fa fa-facebook"></i></li></a>
+	            		<a target="_blank" href="http://www.twitter.com/bittorrent"><li><i class="fa fa-twitter"></i></li></a>
+	            		<a target="_blank" href="http://www.youtube.com/bittorrent"><li><i class="fa fa-youtube-play"></i></li></a>
+	            		<a target="_blank" href="http://www.instagram.com/bittorrent"><li><i class="fa fa-instagram"></i></li></a>
+	            		<a target="_blank" href="https://plus.google.com/+BittorrentInc/posts"><li><i class="fa fa-google-plus"></i></li></a>
+	            		<a target="_blank" href="/rss"><li><i class="fa fa-rss"></i></li></a>
 	            	</ul>
 	        
 	            </div>

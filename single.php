@@ -1,3 +1,13 @@
+<?php $start = get_stylesheet_directory_uri();
+	$targetArray = array(
+		"$start" . "/library/images/featured1.png",
+		"$start" . "/library/images/featured2.png",
+		"$start" . "/library/images/featured3.png",
+		"$start" . "/library/images/featured4.png",
+		"$start" . "/library/images/featured5.png",
+	);
+?>
+
 <?php get_header(); ?>
       
     <div class="container">  
@@ -8,9 +18,14 @@
 
 					<!-- Featured image and title -->
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-single' ); ?>
-							<div class="single-featured" style="background-image: url('<?php echo $image[0]; ?>')">
-								<?php if ( has_post_thumbnail() ) { ?>
+					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-test' ); ?>
+							<?php if ( has_post_thumbnail() ) { ?>
+							<div class="single-featured full" style="background-image: url('<?php echo $image[0]; ?>')">
+							<?php } else { 
+								$rand = array_rand($targetArray); ?>
+								<div class="single-featured no-img" style="background-image: url('<?php echo $targetArray[$rand]; ?>')">
+							<?php } ?>
+								<img class="mobile" src="<?php echo $image[0]; ?>" />
 								<div class="title-background">
 									<header class="article-header">
 									<div class="title">
@@ -23,20 +38,6 @@
 									</div>
 									</header>
 								</div>
-								<? } else { ?>
-								<div class="title-background none">
-									<header class="article-header">
-									<div class="title">
-										<h2><?php the_title(); ?></h2>
-										<p class="byline vcard">
-											by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> on 
-											<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
-											<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
-										</p>
-									</div>
-									</header>
-								</div>
-								<?php } ?>
 							</div>
 							<div class="title mb">
 								<h2><?php the_title(); ?></h2>
@@ -116,20 +117,28 @@
 								$count = $my_query->found_posts;
 						    while( $my_query->have_posts() ) {  
 						    	$my_query->the_post(); ?>
+						    	<?php if( $n < 3 ): ?>
+										<?php $n++ ?>
 						    	<div class="mb">
 						    		<h4><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
 						    	</div>
-						      
-							    <?php if( $n < 3 ): ?>
-										<?php $n++ ?>
-
 										<div class="col-md-4 hidden-xs hidden-sm">
 											<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-secondary' ); ?>
 												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php if ( has_post_thumbnail() ) { ?>
 													<div class="featured second" style="background: url('<?php echo $image[0]; ?>')">
+													<?php } else { 
+														$rand = array_rand($targetArray); ?>
+													<div class="featured second" style="background: url('<?php echo $targetArray[$rand]; ?>')">
+													<? } ?>
 														<div class="title-background">
 															<div class="title">
 																<h4><?php the_title(); ?></h4>
+															</div>
+															<div class="featuredByline">
+																by <em></em> on 
+																<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
+																<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 															</div>
 														</div>
 													</div>
@@ -146,6 +155,11 @@
 													<div class="title-background">
 														<div class="title">
 															<h4><?php the_title(); ?></h4>
+														</div>
+														<div class="featuredByline">
+															by <em></em> on 
+															<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
+															<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 														</div>
 													</div>
 												</div>

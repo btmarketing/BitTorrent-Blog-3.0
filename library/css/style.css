@@ -7642,7 +7642,7 @@ These are the styles for posts, pages, archive, & blog index
 .entry-content p {
   margin-bottom: 20px;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 24px;
 }
 .entry-content > ol,
 .entry-content > ul {
@@ -7869,11 +7869,19 @@ nav .nav {
 .catnav .dropdown-menu {
   background: #f2f2f2;
   border: 0;
+  left: 4px;
+  border-radius: 0;
+}
+.catnav .dropdown-menu .active a {
+  background: none;
 }
 .catnav .nav {
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
+}
+.catnav .nav .dropdown-menu li a {
+  text-align: right;
 }
 .catnav .nav li {
   font-size: 13px;
@@ -8055,6 +8063,7 @@ AUTHOR BOX
 .author-desc {
   min-height: 96px;
   min-height: 100%;
+  overflow: hidden;
 }
 @media (min-width: 480px) {
   .author-desc {
@@ -8181,7 +8190,8 @@ Stylesheet: Featured Post Section
 }
 .featured .title h2 {
   font-weight: 300;
-  font-size: 42px;
+  font-size: 36px;
+  line-height: 42px;
   margin: 0;
 }
 .featured.first .title {
@@ -8192,6 +8202,9 @@ Stylesheet: Featured Post Section
 }
 .featured.second .title h4 {
   margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
 }
 .featured .title-background {
   background-color: rgba(0, 0, 0, 0.5);
@@ -8216,6 +8229,10 @@ Stylesheet: Featured Post Section
     text-align: left;
   }
 }
+.featuredByline,
+.featuredByline a {
+  color: #999999;
+}
 .first {
   height: 382px;
   width: 100%;
@@ -8225,6 +8242,11 @@ Stylesheet: Featured Post Section
   .first {
     margin-bottom: 0px;
   }
+}
+.first .featuredByline {
+  position: absolute;
+  left: 30px;
+  top: 330px;
 }
 .second {
   height: 190px;
@@ -8241,6 +8263,11 @@ Stylesheet: Featured Post Section
     margin-bottom: 0;
   }
 }
+.second .featuredByline {
+  position: absolute;
+  left: 30px;
+  top: 150px;
+}
 .third {
   height: 190px;
   width: 100%;
@@ -8250,6 +8277,13 @@ Stylesheet: Featured Post Section
 }
 .third .title h4 {
   margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+}
+.third .featuredByline {
+  position: absolute;
+  left: 30px;
+  top: 150px;
 }
 .title a {
   text-decoration: none;
@@ -8275,9 +8309,9 @@ Stylesheet: Featured Post Section
 }
 .latest-div {
   height: 30px;
-  background-color: #cccccc;
+  background-color: #d6d6d6;
   margin-bottom: 10px;
-  color: #fff;
+  color: #999999;
   line-height: 30px;
   text-align: center;
 }
@@ -8346,9 +8380,35 @@ Stylesheet: Single Post Styles
   padding-top: 30px;
   background: #fff;
 }
+.mobile {
+  display: block;
+}
+@media (min-width: 992px) {
+  .mobile {
+    display: none;
+  }
+}
 .single-featured {
   background-size: cover !important;
   background-position: center center;
+}
+@media (max-width: 992px) {
+  .single-featured.full {
+    background-image: none !important;
+  }
+}
+.single-featured.full img {
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .single-featured.full .title-background {
+    height: auto;
+  }
+}
+@media (max-width: 992px) {
+  .single-featured.no-img {
+    display: none;
+  }
 }
 .single-featured .title-background {
   height: 175px;
@@ -8394,12 +8454,8 @@ Stylesheet: Single Post Styles
     height: 390px;
   }
 }
-.single-featured .title-background.none {
-  background: #4d4d4d;
-  height: 100%;
-}
 .single-featured .title {
-  padding: 60px 70px 90px;
+  padding: 60px 120px 80px 70px;
   color: #fff;
   position: absolute;
   bottom: 0;
@@ -8407,19 +8463,20 @@ Stylesheet: Single Post Styles
   width: 800px;
   display: none;
 }
+.single-featured .title h2 {
+  font-size: 24px;
+}
 @media (min-width: 992px) {
   .single-featured .title {
     display: block;
   }
-}
-.single-featured .none .title {
-  position: static;
 }
 .mb {
   padding: 0px 5% 0;
 }
 .mb h2 {
   margin-top: 0;
+  font-size: 22px;
 }
 @media (min-width: 992px) {
   .mb {
@@ -8459,7 +8516,7 @@ Stylesheet: Single Post Styles
 }
 @media (min-width: 992px) {
   .single-post .hentry .single-pad {
-    padding: 0 100px;
+    padding: 0 140px;
   }
 }
 .single-post .article-header {
@@ -8485,10 +8542,6 @@ Stylesheet: Single Post Styles
     padding-top: 10px;
   }
 }
-.single-post .none .article-header {
-  position: static;
-  height: 100%;
-}
 .wide {
   padding: 30px 0 30px;
 }
@@ -8509,15 +8562,19 @@ div.sharedaddy div.sd-block {
   }
 }
 blockquote {
-  padding: 0px 9px;
+  padding: 0 0 0 15px;
   margin: 30px 0 30px 0px;
-  font-size: 17.5px;
   border-left: 2px solid #7665ac;
   font-style: italic;
 }
+blockquote p:last-child {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 200;
+}
 @media (min-width: 992px) {
   blockquote {
-    margin: 30px 0 30px -30px;
+    margin: 30px 0 30px -35px;
   }
 }
 /*

@@ -18,9 +18,34 @@ Stylesheet: Single Post Styles
 	}
 }
 
+.mobile {
+	display: block;
+	@media (min-width: @screen-md) {
+		display: none;	
+	}
+}
+
 .single-featured {
 	background-size: cover !important;
 	background-position: center center;
+	&.full {
+		@media (max-width: @screen-md) {	
+			background-image: none !important;
+		}
+		img {
+			width: 100%;
+		}
+		.title-background {
+			@media (max-width: @screen-md) {
+				height: auto;	
+			}
+		}
+	}
+	&.no-img {
+		@media (max-width: @screen-md) {
+			display: none;	
+		}
+	}
 	.title-background {
 		height: 175px;
 		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC42NSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -47,25 +72,21 @@ Stylesheet: Single Post Styles
 			height: 390px;	
 		}
 	}
-	.title-background.none {
-		background: @bt-gray-dark;
-		height: 100%
-	}
 
 	.title {
-		padding: 60px 70px 90px;
+		padding: 60px 120px 80px 70px;
 		color: #fff;
 		position: absolute;
 		bottom: 0;
 		left: 70px;
 		width: 800px;
 		display: none;
+		h2 {
+			font-size: 24px;
+		}
 		@media (min-width: @screen-md) {
 			display: block;	
 		}
-	}
-	.none .title {
-		position: static;
 	}
 }
 
@@ -73,6 +94,7 @@ Stylesheet: Single Post Styles
 	padding: 0px 5% 0;
 	h2 {
 		margin-top: 0;
+		font-size: 22px;
 	}
 	@media (min-width: @screen-md) {
 		display: none;	
@@ -112,7 +134,7 @@ Stylesheet: Single Post Styles
 	.single-pad {
 		padding: 0 5%;
 		@media (min-width: @screen-md) {
-			padding: 0 100px;
+			padding: 0 140px;
 		}
 	}
 }
@@ -139,11 +161,6 @@ Stylesheet: Single Post Styles
 	}
 }
 
-.single-post .none .article-header {
-	position: static;
-	height: 100%;
-}
-
 .wide {
 	padding: 30px 0 30px;
 	img {
@@ -164,12 +181,17 @@ div.sharedaddy div.sd-block {
 	}
 }
 blockquote {
-	padding: 0px 9px;
+	padding: 0 0 0 15px;
 	margin: 30px 0 30px 0px;
-	font-size: 17.5px;
 	border-left: 2px solid @bt-purple;
 	font-style: italic;
+	p:last-child {
+		font-size: 20px;
+		line-height: 30px;
+		font-weight: 200;
+
+	}
 	@media (min-width: @screen-md) {
-		margin: 30px 0 30px -30px;
+		margin: 30px 0 30px -35px;
 	}
 }

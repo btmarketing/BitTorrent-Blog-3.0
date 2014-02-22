@@ -1,3 +1,12 @@
+<?php $start = get_stylesheet_directory_uri();
+	$targetArray = array(
+		"$start" . "/library/images/featured1.png",
+		"$start" . "/library/images/featured2.png",
+		"$start" . "/library/images/featured3.png",
+		"$start" . "/library/images/featured4.png",
+		"$start" . "/library/images/featured5.png",
+	);
+?>
 <?php global $bt_options; ?>
 <?php if( !is_paged() ): ?>
 <?php while ( have_posts() ) :
@@ -10,7 +19,7 @@
 			<div class="titlewrap clearfix">
 				<h1 class="post-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 				<p class="byline vcard">
-					<span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -- 
+					<span class="author">by <em><?php echo bones_get_the_author_posts_link() ?></em></span> on 
 					<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
 					<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 				</p>
@@ -61,9 +70,10 @@
 <?php if (!is_paged()) { ?>
 <?php $the_cat = $bt_options['mid-category'] ?>
 <?php $the_cat_name = get_cat_name( $bt_options['mid-category'] ) ?>
+<?php $the_cat_link = get_category_link( $bt_options['mid-category'] ) ?>
 <div class="divider hidden-xs hidden-sm">
 	<span class="line-left"></span>
-	<span class="mid"><i class="fa fa-list-alt"></i>&nbsp;Latest in <a href="#"><?php echo $the_cat_name ?></a></span>
+	<span class="mid"><i class="fa fa-list-alt"></i>&nbsp;Latest in <a href="<?php echo $the_cat_link ?>"><?php echo $the_cat_name ?></a></span>
 	<span class="line-right"></span>
 </div>
 
@@ -79,10 +89,21 @@
 		<div class="col-md-4">
 			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-secondary' ); ?>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php if ( has_post_thumbnail() ) { ?>
+
 					<div class="featured second" style="background: url('<?php echo $image[0]; ?>')">
+					<? } else {
+					$rand = array_rand($targetArray); ?>
+					<div class="featured second" style="background: url('<?php echo $targetArray[$rand]; ?>')">
+					<? } ?>
 						<div class="title-background">
 							<div class="title">
 								<h4><?php the_title(); ?></h4>
+							</div>
+							<div class="featuredByline">
+								by <em></em> on 
+								<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
+								<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 							</div>
 						</div>
 					</div>
@@ -99,6 +120,11 @@
 					<div class="title-background">
 						<div class="title">
 							<h4><?php the_title(); ?></h4>
+						</div>
+						<div class="featuredByline">
+							by <em></em> on 
+							<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
+							<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 						</div>
 					</div>
 				</div>
@@ -128,7 +154,7 @@ while ( have_posts() ) :
 				<div class="titlewrap clearfix">
 					<h1 class="post-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 					<p class="byline vcard">
-						<span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -- 
+						<span class="author">by <em><?php echo bones_get_the_author_posts_link() ?></em></span> on 
 						<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
 						<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 					</p>
