@@ -7122,6 +7122,13 @@ Stylesheet: Global Stylesheet
 Styles and classes used throughout the entire BREW framework
 
 ******************************************************************/
+.fadeit {
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.fadeit:hover {
+  opacity: .9;
+}
 /*********************
 ADMIN TOP NAV FIXES
 *********************/
@@ -8196,9 +8203,13 @@ Stylesheet: Featured Post Section
 }
 .featured.first .title {
   padding: 30px 30px 0;
+  height: 330px;
+  overflow: hidden;
 }
 .featured.second .title {
   padding: 30px;
+  height: 150px;
+  overflow: hidden;
 }
 .featured.second .title h4 {
   margin: 0;
@@ -8274,11 +8285,14 @@ Stylesheet: Featured Post Section
 }
 .third .title {
   padding: 30px;
+  height: 150px;
+  overflow: hidden;
 }
 .third .title h4 {
   margin: 0;
   font-weight: 300;
   font-size: 16px;
+  line-height: 24px;
 }
 .third .featuredByline {
   position: absolute;
@@ -8543,7 +8557,7 @@ Stylesheet: Single Post Styles
   }
 }
 .wide {
-  padding: 30px 0 30px;
+  padding: 20px 0 20px;
 }
 .wide img {
   padding: 0 !important;
@@ -8567,10 +8581,11 @@ blockquote {
   border-left: 2px solid #7665ac;
   font-style: italic;
 }
-blockquote p:last-child {
-  font-size: 20px;
-  line-height: 30px;
-  font-weight: 200;
+blockquote p:last-child,
+blockquote p {
+  font-size: 20px !important;
+  line-height: 30px !important;
+  font-weight: 200 !important;
 }
 @media (min-width: 992px) {
   blockquote {

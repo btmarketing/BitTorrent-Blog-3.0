@@ -12,6 +12,13 @@ body {
   //padding-top: @navbar-height; // THIS IS IF YOU HAVE top-nav-fixed ENABLED
 }
 
+.fadeit {
+	.transition(opacity .3s ease);
+	&:hover {
+		opacity: .9;
+	}
+}
+
 /*********************
 ADMIN TOP NAV FIXES
 *********************/
@@ -22,3 +29,4 @@ body.admin-bar .navbar-fixed-top {
     top: 28px;
   }
 }
+

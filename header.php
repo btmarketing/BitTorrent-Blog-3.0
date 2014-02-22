@@ -62,7 +62,7 @@
                 <span class="icon-bar"></span>
               </button>
 
-              <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><img height="24px" src="<?php echo get_template_directory_uri() . '/library/images/bt-logo-ret.png'; ?>" /></a>
+              <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><img class="fadeit" height="24px" src="<?php echo get_template_directory_uri() . '/library/images/bt-logo-ret.png'; ?>" /></a>
 
             	<div class="socialtop hidden-xs">
             		<div class="slidesearch">
