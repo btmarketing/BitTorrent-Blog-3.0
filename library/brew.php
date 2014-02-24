@@ -30,6 +30,7 @@ function remove_empty_p( $content ){
 
 
 
+
 //Read more text > bootstrap button
 
 function my_more_link( $link, $link_button ) {
