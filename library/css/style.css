@@ -8138,6 +8138,26 @@ BREADCRUMBS
 /*********************
 PAGINATION
 *********************/
+.pagination {
+  border-top: 1px solid #cccccc;
+  width: 100%;
+  border-radius: 0;
+}
+.pagination .next-link {
+  float: right;
+}
+.pagination li a {
+  padding: 5px 0 0 0;
+  background: none;
+  border: 0;
+  color: #999999;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.pagination li a:hover {
+  background: none !important;
+  color: #808080 !important;
+}
 .pagination li a:hover,
 .pagination li a:focus {
   background-color: #3399ff;
@@ -8513,7 +8533,7 @@ Stylesheet: Single Post Styles
   padding: 30px 5% 0;
 }
 .single-top {
-  border-top: solid 6px #7665ac;
+  border-top: solid 6px #4d4d4d;
   width: 800px;
   margin: -56px auto 0;
   height: 56px;

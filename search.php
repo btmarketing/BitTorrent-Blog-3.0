@@ -13,16 +13,12 @@
     
       <?php get_template_part( 'loop', 'double' ); ?>
 
-    <?php if (function_exists("emm_paginate")) { ?>
-      <?php emm_paginate(); ?>
-    <?php } else { ?>
-      <nav class="wp-prev-next">
-          <ul class="clearfix">
-            <li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
-            <li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
-          </ul>
-      </nav>
-    <?php } ?>
+    <nav class="wp-prev-next">
+      <ul class="clearfix pagination">
+        <li class="prev-link"><?php next_posts_link( __( '<i class="fa fa-chevron-left"></i>' . ' Previous Page', 'bonestheme' )) ?></li>
+        <li class="next-link"><?php previous_posts_link( __( 'Next Page ' . '<i class="fa fa-chevron-right"></i>', 'bonestheme' )) ?></li>
+      </ul>
+    </nav>
   
     </div> <!-- end #main -->
             

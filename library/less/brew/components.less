@@ -164,6 +164,26 @@ BREADCRUMBS
 /*********************
 PAGINATION
 *********************/
+.pagination {
+  border-top: 1px solid @bt-gray-lighter;
+  width: 100%;
+  border-radius: 0;
+  .next-link {
+    float: right;
+  }
+  li a {
+    padding: 5px 0 0 0;
+    background: none;
+    border: 0;
+    color: @bt-gray-light;
+    .transition(color .3s ease);
+    &:hover {
+      background: none !important;
+      color: darken(@bt-gray-light, 10%) !important;
+    }
+  }
+}
+
 
 .pagination {
   li {
