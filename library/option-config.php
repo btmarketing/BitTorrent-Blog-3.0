@@ -247,54 +247,10 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 			// ACTUAL DECLARATION OF SECTIONS
 
 			$this->sections[] = array(
-				'icon' => 'el-icon-wrench',
-				'title' => __('General Settings', 'brew-framework'),
-				'fields' => array (
-					array (
-						'id'=>'tracking-code',
-						'type' => 'textarea',
-						//'required' => array('layout','equals','1'),	
-						'title' => __('Tracking Code', 'brew-framework'), 
-						'subtitle' => __('Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.', 'brew-framework'),
-						'validate' => 'js',
-						'desc' => 'Validate that it\'s javascript!',
-					),
-
-				),
-			);
-
-			$this->sections[] = array(
 				'icon' => 'el-icon-folder',
 				'title' => __('Content Settings', 'brew-framework'),
 				'desc' => __('Choose how certain content is displayed'),
 				'fields' => array (
-					array (
-						'id' => 'breadcrumb',
-						'type' => 'switch',
-						'title' => __('Breadcrumbs', 'brew-framework'),
-						'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
-						'default' => 1,
-					),
-					array (						
-						'id' => 'author_profile',
-						'type' => 'switch',
-						'title' => __('Author Profiles', 'brew-framework'),
-						'desc' => 'Display an author profile after a post',
-						'default' => 1,
-					),
-					array (
-						'id'=>'featured',
-						'type' => 'select',
-						'title' => __('Display Featured Images', 'brew-framework'), 
-						'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
-						'options' => array(
-							'1' => 'Never',
-							'2' => 'Always',
-							'3' => 'Index only',
-							'4' => 'Single post only',
-							),
-						'default' => '1'
-					),
 					array(
 						'id'=>'mid-category',
 						'type' => 'select',
@@ -401,12 +357,12 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 	            
 	            // TYPICAL -> Change these values as you need/desire
 				'opt_name'          	=> 'bt_options', // This is where your data is stored in the database and also becomes your global variable name.
-				'display_name'			=> 'BREW Options', // $theme->get('Name'), // Name that appears at the top of your panel
+				'display_name'			=> 'BitTorrent Blog Options', // $theme->get('Name'), // Name that appears at the top of your panel
 				'display_version'		=> '', //$theme->get('Version'), // Version that appears at the top of your panel
 				'menu_type'          	=> 'menu', //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
 				'allow_sub_menu'     	=> true, // Show the sections below the admin menu item or not
-				'menu_title'			=> __( 'BREW Options', 'brew-framework' ),
-	            'page'		 	 		=> __( 'Brew Options', 'brew-framework' ),
+				'menu_title'			=> __( 'BT Options', 'brew-framework' ),
+	            'page'		 	 		=> __( 'BitTorrent Options', 'brew-framework' ),
 	            'google_api_key'   	 	=> '', // Must be defined to add google fonts to the typography module
 	            'global_variable'    	=> '', // Set a different name for your global variable other than the opt_name
 	            'dev_mode'           	=> false, // Show the time the page took to load, etc
@@ -462,7 +418,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 	 
 			// Panel Intro text -> before the form
 			
-				$this->args['intro_text'] = __('<p>Welcome to the BREW options framework (powered by Redux).  Simple options are provided.  You may add more by configuring option-config.php</p>', 'brew-framework');
+				$this->args['intro_text'] = __('<p>Custom options for the BitTorrent Blog 3.0</p>', 'brew-framework');
 			
 
 			// Add content after the form.

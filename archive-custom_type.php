@@ -6,9 +6,6 @@
 
 					<div id="main" class="col-md-8 clearfix" role="main">
 
-            <!-- UNCOMMENT FOR BREADCRUMBS
-            <?php if ( function_exists('custom_breadcrumb') ) { custom_breadcrumb(); } ?> -->
-
 					<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

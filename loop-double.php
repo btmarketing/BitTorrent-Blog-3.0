@@ -19,7 +19,6 @@ while ( have_posts() ) :
 
 			<?php if ( has_post_thumbnail() ) { ?>
 
-			<?php if( $bt_options['featured'] == '2' || ( $bt_options['featured'] == '4' && is_single() ) || ( $bt_options['featured'] == '3' && is_home() ) ) { ?>
 			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-grid' ); ?>
 			<section class="featured-content featured-img">
 				<?php if ( has_post_thumbnail() ) { ?>
@@ -27,7 +26,6 @@ while ( have_posts() ) :
           	<?php the_post_thumbnail( 'post-grid' ); ?>
           </a>
         <?php } ?>
-			<?php } ?>
 			</section>
 			<?php } else { ?>
 				<hr class="featuredHR">

@@ -7478,8 +7478,19 @@ Stylesheet: Footer
   padding: 0 0 8px 0;
   border-bottom: none;
 }
+#footer .sociallist li {
+  padding-right: 10px;
+  font-size: 18px;
+  float: left;
+}
 #footer-wrapper {
+  padding: 0 5%;
   margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+  #footer-wrapper {
+    padding: 0;
+  }
 }
 #sub-floor {
   color: #aaa;
@@ -7888,7 +7899,7 @@ nav .nav {
   /* end current highlighters */
 }
 .catnav .nav .dropdown-menu li a {
-  text-align: right;
+  text-align: center;
 }
 .catnav .nav li {
   font-size: 13px;

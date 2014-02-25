@@ -1,7 +1,3 @@
-<?php global $bt_options; ?>
-<?php if ( $bt_options['author_profile'] == '1' ) { ?>
-
-
 <div id="author-info" class="clearfix">
     <div class="author-wrap">
 
@@ -50,4 +46,3 @@
  
 </div>
 
-<?php } ?> <!-- end if -->
