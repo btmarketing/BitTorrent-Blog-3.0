@@ -81,15 +81,15 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
-add_image_size( 'post-grid', 465, auto, false );
-add_image_size( 'featured-test', 940, auto, false );
-add_image_size( 'post-featured', 940, 564, true );
-add_image_size( 'featured-main', 630, 390, true );
-add_image_size( 'featured-secondary', 310, 190, true );
-add_image_size( 'featured-long', 470, 190, true );
-add_image_size( 'featured-single', 950, 390, true );
+//add_image_size( 'bones-thumb-600', 600, 150, true );
+//add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'post-grid', 465, auto, false ); // image used in the grid/double column.
+add_image_size( 'featured-test', 940, auto, false ); // image used at top of a single post
+add_image_size( 'post-featured', 940, 564, true ); // large image used in first 4 chronological posts on index
+add_image_size( 'featured-main', 630, 390, true ); // the large feautured-main image on top of index
+add_image_size( 'featured-secondary', 310, 190, true ); // smaller featured image size. Used in top of index, and top of 'recommend posts'
+add_image_size( 'featured-long', 470, 190, true ); // the short long image size used in 'recommended posts' sections
+//add_image_size( 'featured-single', 950, 390, true );
 /*
 to add more sizes, simply copy a line from above
 and change the dimensions & name. As long as you

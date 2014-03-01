@@ -107,13 +107,16 @@
 <script type="text/javascript">
 	jQuery(window).ready(function($) {
 		var $container = $(".double");
+		var $imgs = $("img");
 		$container.imagesLoaded(function () {
     	$container.isotope({
         itemSelector: ".item",
 	    });
+	    $imgs.load(function () {
+        $container.isotope('reLayout');
+      }); 
+		});
 	});
-
-});
 </script>
 
 <?php get_footer(); ?>
