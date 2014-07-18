@@ -8647,7 +8647,7 @@ Stylesheet: Press Room
 ******************************************************************/
 .press-content {
   font-size: 16px;
-  padding: 45px 40px;
+  padding: 40px 40px;
   background: #fff;
   margin-bottom: 10px;
 }
@@ -8661,26 +8661,28 @@ Stylesheet: Press Room
 }
 .press-content .time {
   color: #999;
+  font-weight: 100;
 }
 .press-sidebar {
   color: #999;
   font-size: 12px;
   background: #f2f2f2;
-  padding: 45px 40px 5px 40px;
+  padding: 40px 40px 15px 40px;
+  line-height: 18px;
 }
 .press-sidebar h4 {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .press-sidebar strong,
 .press-sidebar li {
-  padding-top: 15px;
+  padding-top: 0px;
 }
 .press-sidebar ul {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .press-sidebar .muted a {
   color: #999;
@@ -8689,10 +8691,11 @@ Stylesheet: Press Room
   margin-top: 10px;
 }
 .news-item {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 .news-item .time {
   padding-top: 15px;
+  font-weight: 100;
 }
 /*
 RETINA (2x RESOLUTION DEVICES)

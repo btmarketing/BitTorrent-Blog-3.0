@@ -52,8 +52,8 @@
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php $news_url = get_post_meta( $post->ID, '_btm_news_url', true ); ?>
           <div class="news-item">
-            <p><a href="<?php echo $news_url ?>" target="_blank"><?php the_title(); ?></a></p>
-            <span class="time"><?php the_time('F j, Y'); ?></span>
+            <p><a href="<?php echo $news_url ?>" target="_blank"><?php the_title(); ?></a><br>
+            <span class="time"><?php the_time('F j, Y'); ?></span></p>
           </div>
           <?php endwhile; ?>
           <?php endif; ?>
