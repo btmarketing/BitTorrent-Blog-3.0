@@ -14,6 +14,8 @@ require_once( 'library/navwalker.php' ); // needed for bootstrap navigation
 
 require_once( 'library/bt-meta.php' ); // custom metaboxes
 
+require_once( 'library/shortcodes.php' ); // custom shortcodes
+
 
 // REDUX.  Needed for custom admin panel
 // https://github.com/ReduxFramework/ReduxFramework
