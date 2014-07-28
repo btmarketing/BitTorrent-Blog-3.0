@@ -28,8 +28,14 @@ function bittorrent_custom_metaboxes( $meta_boxes ) {
     'fields' => array(
       array(
         'name' => 'URL',
-        'desc' => 'Enter full URL. ex: http://www.twitter.com/slightlyoffbeat',
+        'desc' => 'Enter full URL. ex: http://www.theverge.com/story',
         'id' => $prefix . 'news_url',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'Publication/Site',
+        'desc' => 'Enter the name of the publication/source/website',
+        'id' => $prefix . 'source',
         'type' => 'text'
       ),
     ),

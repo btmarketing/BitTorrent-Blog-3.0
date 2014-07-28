@@ -8668,7 +8668,7 @@ Stylesheet: Press Room
   font-size: 14px;
   background: #f2f2f2;
   padding: 40px 40px 15px 40px;
-  line-height: 24px;
+  line-height: 21px;
 }
 .press-sidebar h4 {
   margin-top: 0;
@@ -8687,6 +8687,7 @@ Stylesheet: Press Room
 }
 .press-sidebar .muted a {
   color: #999;
+  font-weight: 100;
 }
 .press-sidebar.bump {
   margin-top: 10px;
@@ -8694,9 +8695,13 @@ Stylesheet: Press Room
 .news-item {
   padding-bottom: 15px;
 }
-.news-item .time {
+.news-item .time,
+.news-item .source {
   padding-top: 15px;
   font-weight: 100;
+}
+.news-item .time {
+  font-size: 12px;
 }
 .button-wrap {
   margin-bottom: 20px;

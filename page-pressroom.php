@@ -51,8 +51,10 @@
           <?php query_posts('post_type=custom_news&posts_per_page=10');?>
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php $news_url = get_post_meta( $post->ID, '_btm_news_url', true ); ?>
+          <?php $the_source = get_post_meta( $post->ID, '_btm_source', true ); ?>
           <div class="news-item">
             <p><a href="<?php echo $news_url ?>" target="_blank"><?php the_title(); ?></a><br>
+            <span class="source"><em><?php echo $the_source ?></em></span><br>
             <span class="time"><?php the_time('F j, Y'); ?></span></p>
           </div>
           <?php endwhile; ?>
