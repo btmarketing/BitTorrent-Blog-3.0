@@ -8675,6 +8675,11 @@ Stylesheet: Press Room
   margin-bottom: 15px;
   font-weight: 600;
 }
+.press-sidebar h5 {
+  font-size: 14px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
 .press-sidebar strong,
 .press-sidebar li {
   padding-top: 0px;

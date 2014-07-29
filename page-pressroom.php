@@ -47,7 +47,7 @@
           </ul>
         </div> <!--/press-sidebar-->
         <div class="press-sidebar bump">
-          <h4>In the News</h4>
+          <h5>In the News</h5>
           <?php query_posts('post_type=custom_news&posts_per_page=10');?>
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php $news_url = get_post_meta( $post->ID, '_btm_news_url', true ); ?>
