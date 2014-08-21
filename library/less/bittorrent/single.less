@@ -28,6 +28,12 @@ Stylesheet: Single Post Styles
 .single-featured {
 	background-size: cover !important;
 	background-position: center center;
+  &.single-hero {
+    background-image: none !important;
+    .title-background {
+      height: auto;
+    }
+  }
 	&.full {
 		@media (max-width: @screen-md) {	
 			background-image: none !important;
@@ -101,9 +107,17 @@ Stylesheet: Single Post Styles
 	}
 }
 
+
 .title.mb {
 	background: #fff;
 	padding: 30px 5% 0;
+}
+
+.title.mb.single-hero {
+  display: block;
+  @media (min-width: @screen-md) {
+    padding: 30px 190px 30px 140px;
+  }
 }
 
 
@@ -137,6 +151,12 @@ Stylesheet: Single Post Styles
 			padding: 0 140px;
 		}
 	}
+}
+
+.single-post .hentry.single-hero {
+  @media (min-width: @screen-md) {
+    background: #fff;
+  }
 }
 
 .single-post { 
