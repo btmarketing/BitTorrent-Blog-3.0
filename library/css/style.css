@@ -8449,12 +8449,6 @@ Stylesheet: Single Post Styles
   background-size: cover !important;
   background-position: center center;
 }
-.single-featured.single-hero {
-  background-image: none !important;
-}
-.single-featured.single-hero .title-background {
-  height: auto;
-}
 @media (max-width: 992px) {
   .single-featured.full {
     background-image: none !important;
@@ -8550,14 +8544,6 @@ Stylesheet: Single Post Styles
   background: #fff;
   padding: 30px 5% 0;
 }
-.title.mb.single-hero {
-  display: block;
-}
-@media (min-width: 992px) {
-  .title.mb.single-hero {
-    padding: 30px 190px 30px 140px;
-  }
-}
 .single-top {
   border-top: solid 6px #4d4d4d;
   width: 800px;
@@ -8588,11 +8574,6 @@ Stylesheet: Single Post Styles
 @media (min-width: 992px) {
   .single-post .hentry .single-pad {
     padding: 0 140px;
-  }
-}
-@media (min-width: 992px) {
-  .single-post .hentry.single-hero {
-    background: #fff;
   }
 }
 .single-post .article-header {
@@ -8655,6 +8636,102 @@ blockquote p {
 @media (min-width: 992px) {
   blockquote {
     margin: 30px 0 30px -35px;
+  }
+}
+/******************************************************************
+Site Name: BitTorrent Blog 2.0
+Author: Dan Brown
+
+Stylesheet: Custom Blog Post Styles
+
+This stylesheet will contain additional CSS for custom single blog posts.
+
+Currently, custom layouts are accomplished by using:
+
+http://wordpress.org/plugins/single-post-template/
+
+******************************************************************/
+.single-featured .single-hero {
+  background-image: none !important;
+}
+.single-featured .single-hero .title-background {
+  height: auto;
+}
+.title.mb.single-hero {
+  display: block;
+}
+@media (min-width: 992px) {
+  .title.mb.single-hero {
+    padding: 30px 190px 30px 140px;
+  }
+}
+@media (min-width: 992px) {
+  .single-post .hentry.single-hero {
+    background: #fff;
+  }
+}
+.mobile-bundle {
+  padding: 5px;
+  background: #333333;
+  text-align: center;
+  color: #fff;
+}
+.single-cta {
+  padding: 80px 40px;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .single-cta {
+    padding: 120px 40px;
+  }
+}
+.single-cta h2 {
+  font-size: 54px;
+  margin-top: 0;
+  font-weight: 200;
+}
+@media (min-width: 992px) {
+  .single-cta h2 {
+    font-size: 72px;
+  }
+}
+.single-cta h4 {
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 30px;
+}
+@media (min-width: 992px) {
+  .single-cta h4 {
+    font-size: 28px;
+  }
+}
+.single-cta .button {
+  padding-top: 60px;
+}
+.single-cta .button .one {
+  width: 100%;
+  padding: 0;
+  font-size: 18px;
+  height: 48px;
+}
+.single-cta .button .two {
+  margin-top: 20px;
+  width: 100%;
+  padding: 0;
+  font-size: 18px;
+  height: 48px;
+}
+@media (min-width: 768px) {
+  .single-cta .button .one {
+    float: right;
+    font-size: 14px;
+    height: 42px;
+  }
+  .single-cta .button .two {
+    float: left;
+    margin-top: 0;
+    font-size: 14px;
+    height: 42px;
   }
 }
 /******************************************************************
@@ -8735,8 +8812,8 @@ Stylesheet: Press Room
   color: #fff;
   border-radius: 3px;
   height: 48px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
   font-size: 18px;
   font-weight: 300;
   -webkit-transition: all 0.5s ease;
@@ -8764,8 +8841,8 @@ Stylesheet: Press Room
   color: #3399ff;
   border-radius: 3px;
   height: 48px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
   font-size: 18px;
   font-weight: 300;
   -webkit-transition: all 0.5s ease;
@@ -8786,6 +8863,112 @@ Stylesheet: Press Room
   font-size: 16px;
   padding-left: 15px;
   padding-right: 15px;
+}
+.btn-bt3 {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 3px;
+  height: 48px;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-size: 18px;
+  font-weight: 300;
+  -webkit-transition: background 0.5s ease;
+  transition: background 0.5s ease;
+}
+.btn-bt3:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+.btn-bt3.btn-lg {
+  height: 72px;
+  font-size: 24px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.btn-bt3.btn-sm {
+  height: 36px;
+  font-size: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.bt-modal .modal-dialog {
+  width: auto;
+  margin: 30px;
+}
+@media (min-width: 992px) {
+  .bt-modal .modal-dialog {
+    width: 700px;
+    height: 400px;
+    margin: 30px auto;
+  }
+}
+.bt-modal .modal-body {
+  padding: 0;
+}
+.bt-modal .close {
+  float: right;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 0 0px 0 #ffffff;
+  opacity: 0.5;
+}
+.bt-modal button.close {
+  padding: 5px 10px;
+}
+.bt-modal .modal-cta {
+  padding: 80px 20px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .bt-modal .modal-cta {
+    padding: 80px 40px;
+  }
+}
+.bt-modal .modal-cta h2 {
+  font-size: 42px;
+  margin-top: 0;
+  font-weight: 200;
+}
+@media (min-width: 992px) {
+  .bt-modal .modal-cta h2 {
+    font-size: 54px;
+  }
+}
+.bt-modal .modal-cta h4 {
+  font-weight: 200;
+  line-height: 24px;
+}
+.bt-modal .modal-cta .button {
+  padding-top: 60px;
+  font-size: 14px;
+}
+.bt-modal .modal-cta .button .one {
+  width: 100%;
+  padding: 0;
+  font-size: 18px;
+  height: 48px;
+}
+.bt-modal .modal-cta .button .two {
+  margin-top: 20px;
+  width: 100%;
+  padding: 0;
+  font-size: 18px;
+  height: 48px;
+}
+@media (min-width: 992px) {
+  .bt-modal .modal-cta .button .one {
+    float: right;
+    font-size: 14px;
+    height: 42px;
+  }
+  .bt-modal .modal-cta .button .two {
+    float: left;
+    margin-top: 0;
+    font-size: 14px;
+    height: 42px;
+  }
 }
 /*
 RETINA (2x RESOLUTION DEVICES)

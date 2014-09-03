@@ -1,0 +1,105 @@
+/******************************************************************
+Site Name: BitTorrent Blog 2.0
+Author: Dan Brown
+
+Stylesheet: Custom Blog Post Styles
+
+This stylesheet will contain additional CSS for custom single blog posts.
+
+Currently, custom layouts are accomplished by using:
+
+http://wordpress.org/plugins/single-post-template/
+
+******************************************************************/
+
+//SINGLE HERO
+// This format will have the featured image displayed at the top of the post
+// It will not have a gradient or title over it. 
+// This is ideal if you want the featured image to be easy to see and on top.
+
+
+.single-featured .single-hero {
+  background-image: none !important;
+  .title-background {
+    height: auto;
+  }
+}
+
+.title.mb.single-hero {
+  display: block;
+  @media (min-width: @screen-md) {
+    padding: 30px 190px 30px 140px;
+  }
+}
+
+.single-post .hentry.single-hero {
+  @media (min-width: @screen-md) {
+    background: #fff;
+  }
+}
+
+
+//SINGLE BUNDLE
+// This format will have the bundle embed up top
+// You will need to enter a URL in the Bundle Metabox
+.mobile-bundle {
+  padding: 5px;
+  background: #333333;
+  text-align: center;
+  color: #fff;
+}
+
+//SINGLE CTA
+// This format will have have an image with 1-2 CTAs at the top of post
+.single-cta {
+  padding: 80px 40px;
+  @media (min-width: @screen-md) {
+    padding: 120px 40px;
+  }
+  text-align: center;
+  h2 {
+    font-size: 54px;
+    margin-top: 0;
+    font-weight: 200;
+    @media (min-width: @screen-md) {
+      font-size: 72px;
+    }
+  }
+  h4 {
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 30px;
+    @media (min-width: @screen-md) {
+      font-size: 28px;
+    }
+  }
+  .button {
+    padding-top: 60px;
+    & .one {
+      width: 100%;
+      padding: 0;
+      font-size: 18px;
+      height: 48px;
+    }
+    & .two {
+      margin-top: 20px;
+      width: 100%;
+      padding: 0;
+      font-size: 18px;
+      height: 48px;
+    }
+    @media (min-width: @screen-sm) {
+      & .one {
+        float: right;
+        font-size: 14px;
+        height: 42px;
+      }
+      & .two {
+        float: left;
+        margin-top: 0;
+        font-size: 14px;
+        height: 42px;
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+// BitTorrent Modal
+//----------------------
+
+
+.bt-modal {
+  .modal-dialog {
+    width: auto;
+    margin: 30px;
+    @media (min-width: @screen-md) {
+      width: 700px;
+      height: 400px;
+      margin: 30px auto;
+    }
+  }
+  .modal-body {
+    padding: 0;
+  }
+  .close {
+    float: right;
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 0 0px 0 #ffffff;
+    opacity: 0.5;
+  }
+  button.close {
+    padding: 5px 10px;
+  }
+}
+
+.bt-modal .modal-cta {
+  padding: 80px 20px;
+  @media (min-width: @screen-sm) {
+    padding: 80px 40px;
+  }
+  text-align: center;
+  h2 {
+    font-size: 42px;
+    margin-top: 0;
+    font-weight: 200;
+    @media (min-width: @screen-md) {
+      font-size: 54px;
+    }
+  }
+  h4 {
+    font-weight: 200;
+    line-height: 24px;
+  }
+  .button {
+    padding-top: 60px;
+    font-size: 14px;
+    & .one {
+      width: 100%;
+      padding: 0;
+      font-size: 18px;
+      height: 48px;
+    }
+    & .two {
+      margin-top: 20px;
+      width: 100%;
+      padding: 0;
+      font-size: 18px;
+      height: 48px;
+    }
+    @media (min-width: @screen-md) {
+      & .one {
+        float: right;
+        font-size: 14px;
+        height: 42px;
+      }
+      & .two {
+        float: left;
+        margin-top: 0;
+        font-size: 14px;
+        height: 42px;
+      }
+    }
+  }
+}
+
+// font-size 14px & button height 42px desktop
+// button darkens to 10% black

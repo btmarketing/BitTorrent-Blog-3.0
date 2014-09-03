@@ -1,4 +1,5 @@
     <footer id="footer" class="clearfix">
+
       <div id="footer-widgets">
 
         <div class="container">
@@ -45,6 +46,16 @@
           </div> <!-- end .row -->
         </div>
       </div>
+      
+      <!-- snippet for enabling/disabling blog-wide modal -->
+        <?php global $bt_options ?>
+        <?php $PostModalOption = get_post_meta( $post->ID, '_btm_modal_allow', true); ?>
+        <?php if ( is_single() && $bt_options['modalSwitch'] == '1' && ( $PostModalOption == 'modal_enabled' || $PostModalOption == '') ) {
+          get_template_part( 'themodal'); 
+        } elseif ( is_home() && $bt_options['modalSwitchIndex'] == '1') {
+          get_template_part( 'themodal');
+        } ?>
+
 
     </footer> <!-- end footer -->
 

@@ -262,6 +262,74 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 				),
 			);
 
+      $this->sections[] = array(
+        'icon' => 'el-icon-wrench',
+        'title' => __('Modal Settings', 'brew-framework'),
+        'fields' => array (
+          array(
+            'id'        => 'modalSwitch',
+            'type'      => 'switch',
+            'title'     => __('Enable Modal on Posts', 'redux-framework-demo'),
+            'subtitle'  => __('Turn the modal on or off. Individual posts can be excluded when editing posts', 'redux-framework-demo'),
+            //'options' => array('on', 'off'),
+            'default'   => false,
+          ),
+          array(
+            'id'        => 'modalSwitchIndex',
+            'type'      => 'switch',
+            'title'     => __('Enable Modal on index', 'redux-framework-demo'),
+            'subtitle'  => __('Turn the modal on or off for index.', 'redux-framework-demo'),
+            //'options' => array('on', 'off'),
+            'default'   => false,
+          ),
+          array(
+            'id'=>'modalImage',
+            'type' => 'media', 
+            'url'=> true,
+            'title' => __('Modal Image', 'redux-framework-demo'),
+            'compiler' => 'true',
+            'desc'=> __('must be taller than 500px.', 'brew-framework'),
+            ),
+          array(
+            'id'=>'modalText',
+            'type' => 'text',
+            'title' => __('Main Title', 'brew-framework'),
+            ),
+          array(
+            'id'=>'modalTextSecond',
+            'type' => 'text',
+            'title' => __('Secondary Text', 'brew-framework'),
+            ),
+          array(
+            'id'=>'modalBtn1',
+            'type' => 'text',
+            'title' => __('Button 1 text', 'brew-framework'),
+            ),
+          array(
+            'id'=>'modalBtn1url',
+            'type' => 'text',
+            'title' => __('Button 1 URL', 'brew-framework'),
+            ),
+          array(
+            'id'=>'modalBtn2',
+            'type' => 'text',
+            'title' => __('Button 2 text', 'brew-framework'),
+            ),
+          array(
+            'id'=>'modalBtn2url',
+            'type' => 'text',
+            'title' => __('Button 2 URL', 'brew-framework'),
+            ),
+          array(
+            'id'=>'modalTextColor',
+            'type' => 'text',
+            'title' => __('Text Color', 'brew-framework'),
+            'desc' => __('default is white', 'brew-framework'),
+
+            ),
+        ),
+      );
+
 			
 					
 					
