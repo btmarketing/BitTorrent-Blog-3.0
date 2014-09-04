@@ -52,9 +52,12 @@ http://wordpress.org/plugins/single-post-template/
 //SINGLE CTA
 // This format will have have an image with 1-2 CTAs at the top of post
 .single-cta {
-  padding: 80px 40px;
-  @media (min-width: @screen-md) {
+  padding: 80px 20px;
+  @media (min-width: @screen-sm) {
     padding: 120px 40px;
+  }
+  @media (min-width: @screen-md) {
+    padding: 80px 140px;
   }
   text-align: center;
   h2 {
@@ -62,15 +65,15 @@ http://wordpress.org/plugins/single-post-template/
     margin-top: 0;
     font-weight: 200;
     @media (min-width: @screen-md) {
-      font-size: 72px;
+      font-size: 60px;
     }
   }
   h4 {
     font-weight: 200;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 30px;
     @media (min-width: @screen-md) {
-      font-size: 28px;
+      font-size: 22px;
     }
   }
   .button {
@@ -91,14 +94,10 @@ http://wordpress.org/plugins/single-post-template/
     @media (min-width: @screen-sm) {
       & .one {
         float: right;
-        font-size: 14px;
-        height: 42px;
       }
       & .two {
         float: left;
         margin-top: 0;
-        font-size: 14px;
-        height: 42px;
       }
     }
   }

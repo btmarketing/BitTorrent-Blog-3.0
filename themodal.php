@@ -34,7 +34,7 @@ else {
             </div>
             <?php } else { ?>
             <div class="button">
-              <a href="<?php echo $bt_options['modalBtn1url'] ?>" target="_blank"><button type="button" class="btn btn-bt"><?php echo $bt_options['modalBtn1'] ?></button></a>
+              <a href="<?php echo $bt_options['modalBtn1url'] ?>" target="_blank"><button type="button" class="btn btn-bt single-bt"><?php echo $bt_options['modalBtn1'] ?></button></a>
             </div>
             <?php } ?>
           </div>

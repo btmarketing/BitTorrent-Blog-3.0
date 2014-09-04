@@ -45,10 +45,10 @@ else {
                 </div>
               <?php if ($btn2text != '') { ?>
                 <div class="button row">
-                  <div class="col-sm-4 col-sm-offset-2">
+                  <div class="col-sm-6">
                     <a href="<?php echo $btn1url ?>" target="_blank"><button type="button" class="btn btn-bt one"><?php echo $btn1text ?></button></a>
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-sm-6">
                     <a href="<?php echo $btn2url ?>" target="_blank"><button type="button" class="btn btn-bt3 singlecta two"><?php echo $btn2text ?></button></a>
                     </div>
                 </div>

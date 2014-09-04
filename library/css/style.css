@@ -8677,12 +8677,17 @@ http://wordpress.org/plugins/single-post-template/
   color: #fff;
 }
 .single-cta {
-  padding: 80px 40px;
+  padding: 80px 20px;
   text-align: center;
+}
+@media (min-width: 768px) {
+  .single-cta {
+    padding: 120px 40px;
+  }
 }
 @media (min-width: 992px) {
   .single-cta {
-    padding: 120px 40px;
+    padding: 80px 140px;
   }
 }
 .single-cta h2 {
@@ -8692,17 +8697,17 @@ http://wordpress.org/plugins/single-post-template/
 }
 @media (min-width: 992px) {
   .single-cta h2 {
-    font-size: 72px;
+    font-size: 60px;
   }
 }
 .single-cta h4 {
   font-weight: 200;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 30px;
 }
 @media (min-width: 992px) {
   .single-cta h4 {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 .single-cta .button {
@@ -8724,14 +8729,10 @@ http://wordpress.org/plugins/single-post-template/
 @media (min-width: 768px) {
   .single-cta .button .one {
     float: right;
-    font-size: 14px;
-    height: 42px;
   }
   .single-cta .button .two {
     float: left;
     margin-top: 0;
-    font-size: 14px;
-    height: 42px;
   }
 }
 /******************************************************************
@@ -8901,7 +8902,7 @@ Stylesheet: Press Room
   .bt-modal .modal-dialog {
     width: 700px;
     height: 400px;
-    margin: 30px auto;
+    margin: 12% auto;
   }
 }
 .bt-modal .modal-body {
@@ -8960,14 +8961,16 @@ Stylesheet: Press Room
 @media (min-width: 992px) {
   .bt-modal .modal-cta .button .one {
     float: right;
-    font-size: 14px;
-    height: 42px;
   }
   .bt-modal .modal-cta .button .two {
     float: left;
     margin-top: 0;
-    font-size: 14px;
-    height: 42px;
+  }
+}
+@media (max-width: 992px) {
+  .single-bt {
+    width: 100%;
+    padding: 0;
   }
 }
 /*
