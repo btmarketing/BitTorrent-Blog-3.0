@@ -5,7 +5,7 @@ This will display the hero image by itself.  No gradient or text over it.
 */
 ?>
 
-<?php $videourl = get_post_meta( $post->ID, '_btm_bundle_url', true ); ?>
+<?php $videourl = get_post_meta( $post->ID, '_btm_video_url', true ); ?>
 
 <?php get_header(); ?>
       
@@ -18,7 +18,7 @@ This will display the hero image by itself.  No gradient or text over it.
 					<!-- Featured image and title -->
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
               <div class="post">
-					   <?php echo wp_oembed_get( 'https://www.youtube.com/watch?v=EicjjaD8_kE', $args );   ?> 
+					   <?php echo wp_oembed_get( $videourl, $args );   ?> 
              </div>
 							<div class="title mb single-hero">
 								<h2><?php the_title(); ?></h2>
