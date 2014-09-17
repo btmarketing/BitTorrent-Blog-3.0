@@ -117,7 +117,7 @@ you like. Enjoy!
 /********** ADD SHORTCODES ********************/
 
 function make_wide( $attr, $content = null ) {
-    return '</div><div class="wide">' . $content . '</div><div class="single-pad">';
+    return '</div><div class="wide">' . do_shortcode($content) . '</div><div class="single-pad">';
 }
 
 add_shortcode('wide', 'make_wide');

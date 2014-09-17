@@ -7708,6 +7708,11 @@ These are the styles for posts, pages, archive, & blog index
     padding: 0 30px 30px;
   }
 }
+.wp-caption p.wp-caption-text {
+  background: #333333;
+  color: #fff;
+  margin-top: 0;
+}
 /*******************************
 06. ENTRY FOOTER
 ********************************/

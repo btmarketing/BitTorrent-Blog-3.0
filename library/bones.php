@@ -126,7 +126,6 @@ function bones_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   if (!is_admin()) {
 
-    // js bootstrap
     // download a custom file @ getbootstrap.com/customize/ if you don't want all js components
     wp_register_script( 'bones-bootstrap', get_template_directory_uri() . '/library/js/libs/bootstrap.min.js', array(), '3.0.0', true );
 
