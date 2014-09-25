@@ -89,7 +89,9 @@ require_once( 'library/custom-news.php' ); // you can disable this if you like
 //add_image_size( 'bones-thumb-300', 300, 100, true );
 add_image_size( 'post-grid', 465, auto, false ); // image used in the grid/double column.
 add_image_size( 'featured-test', 940, auto, false ); // image used at top of a single post
-add_image_size( 'post-featured', 940, 564, true ); // large image used in first 4 chronological posts on index
+//add_image_size( 'post-featured', 940, 564, true ); // large image used in first 4 chronological posts on index
+//TEMPORARY.  Delete after MT is no longer in top 4 posts.
+add_image_size( 'post-featured', 940, auto, true ); // large image used in first 4 chronological posts on index
 add_image_size( 'featured-main', 630, 390, true ); // the large feautured-main image on top of index
 add_image_size( 'featured-secondary', 310, 190, true ); // smaller featured image size. Used in top of index, and top of 'recommend posts'
 add_image_size( 'featured-long', 470, 190, true ); // the short long image size used in 'recommended posts' sections

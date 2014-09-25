@@ -61,6 +61,7 @@ function bittorrent_custom_metaboxes( $meta_boxes ) {
           array( 'name' => 'Video Layout', 'value' => 'video', ),
           array( 'name' => 'CTA Layout', 'value' => 'cta', ),
           array( 'name' => 'Bundle Layout', 'value' => 'bundle', ),
+          array( 'name' => 'No Hero', 'value' => 'nohero', ),
 
         ),
       ),
