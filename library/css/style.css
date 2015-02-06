@@ -7677,6 +7677,18 @@ These are the styles for posts, pages, archive, & blog index
   max-width: 100%;
   height: auto;
 }
+.entry-content ul li {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  padding-bottom: 2px;
+}
+.entry-content ol li {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  padding-bottom: 2px;
+}
 .entry-content dd {
   margin-left: 0;
   font-size: 0.9em;

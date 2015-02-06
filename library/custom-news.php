@@ -45,7 +45,7 @@ function custom_news() {
 			'description' => __( 'News Stories around the web about BitTorrent', 'bonestheme' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true,
-			'exclude_from_search' => false,
+			'exclude_from_search' => true,
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */ 
