@@ -16,6 +16,7 @@ function bt_button( $atts, $content = null ) {
       'centered' => 'yes',
       'size' => '',
       'link' => '',
+      'tracking' => '',
    ), $atts));
   $the_size = '';
   $the_center ='text-center';
@@ -29,7 +30,7 @@ function bt_button( $atts, $content = null ) {
     $the_center = 'text-left';
   }
 
-  return '<div class="button-wrap ' . $the_center . '"><a href="' . $link . '" target="_blank"><button type="button" class="btn btn-bt ' . $the_size . '">' . $content . '</button></a></div>';
+  return '<div class="button-wrap ' . $the_center . '"><a href="' . $link . '" target="_blank"><button type="button" class="btn btn-bt ' . $the_size . ' ' . $tracking . '">' . $content . '</button></a></div>';
 }
 
 function register_shortcodes(){
