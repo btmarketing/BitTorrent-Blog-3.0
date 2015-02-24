@@ -39,6 +39,7 @@ function bt_gif( $atts, $content = null ) {
       'static' => '',
       'gif' => '',
       'align' => 'alignnone',
+      'num' => '',
     ), $atts));
   $the_gif = "'" . $gif . "'";
   $the_align = $align;
@@ -52,7 +53,22 @@ function bt_gif( $atts, $content = null ) {
     $the_align = "alignright";
   }
 
-  return '<img class="' . $the_align . '" src="' . $static . '" onclick="this.src=' . $the_gif . '">';
+  return '<img class="' . $the_align . '" src="' . $static . '" onclick="this.src=' . $the_gif . '">
+  <div class="hidden">
+  <script type="text/javascript">
+      var images = new Array()
+      function preload() {
+        for (i = 0; i < preload.arguments.length; i++) {
+          images[i] = new Image()
+          images[i].src = preload.arguments[i]
+        }
+      }
+      preload(
+        "' . $the_gif . '",
+      )
+    //--><!]]>
+  </script>
+</div>';
 }
 
 function register_shortcodes(){
