@@ -15,14 +15,14 @@ Template Name: Page - Full Width
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             
             <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-              
-              <header class="page-head article-header">
+            
+            
+              <section class="page-content entry-content clearfix" itemprop="articleBody">
+                <header class="page-head article-header">
                 
                 <div class=""><h1 class="page-title entry-title" itemprop="headline"><?php the_title(); ?></h1></div>
               
               </header> <!-- end article header -->
-            
-              <section class="page-content entry-content clearfix" itemprop="articleBody">
                 <?php the_content(); ?>
             
               </section> <!-- end article section -->
@@ -34,9 +34,7 @@ Template Name: Page - Full Width
               </footer> <!-- end article footer -->
             
             </article> <!-- end article -->
-            
-            <?php comments_template('',true); ?>
-            
+                        
             <?php endwhile; ?>    
             
             <?php else : ?>
