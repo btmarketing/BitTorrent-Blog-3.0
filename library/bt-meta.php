@@ -183,6 +183,26 @@ function bittorrent_custom_metaboxes( $meta_boxes ) {
   );
 
 
+$meta_boxes[] = 
+  array(
+    'id' => 'alt_featured',
+    'title' => 'Alt Featured Image',
+    'pages' => array('post'), // post type
+    'context' => 'normal',
+    'priority' => 'high',
+    'show_names' => true, // Show field names on the left
+    'fields' => array(
+      array(
+        'name' => __( 'Alt Featured Image'),
+        'desc' => __( 'Upload an alt image to display on homepage'),
+        'id'   => $prefix . 'alt_featured',
+        'type' => 'file',
+      ),
+    ),
+  ); 
+
+
+
 
 
 

@@ -85,11 +85,20 @@
 		<?php $n++ ?>
 
 		<div class="col-md-4">
-			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-secondary' ); ?>
+			<?php $altimage = get_post_meta( $post->ID, '_btm_alt_featured', true ); ?>
+			<?php 
+			if ( $altimage != '') { 
+				$image = $altimage;
+			} 
+			else {
+				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-secondary' );
+				$image = $image[0];
+			}
+			?>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 					<?php if ( has_post_thumbnail() ) { ?>
 
-					<div class="featured second" style="background: url('<?php echo $image[0]; ?>')">
+					<div class="featured second" style="background: url('<?php echo $image; ?>')">
 					<? } else {
 					$rand = array_rand($targetArray); ?>
 					<div class="featured second" style="background: url('<?php echo $targetArray[$rand]; ?>')">
@@ -112,9 +121,19 @@
 		<?php $n++ ?>
 
 		<div class="col-md-6">
-			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-long' ); ?>
+		<?php $altimage = get_post_meta( $post->ID, '_btm_alt_featured', true ); ?>
+			<?php 
+			if ( $altimage != '') { 
+				$image = $altimage;
+			} 
+			else {
+				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-long' );
+				$image = $image[0];
+			}
+			?>
+
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<div class="featured third gap" style="background: url('<?php echo $image[0]; ?>')">
+				<div class="featured third gap" style="background: url('<?php echo $image; ?>')">
 					<div class="title-background">
 						<div class="title">
 							<h4><?php the_title(); ?></h4>

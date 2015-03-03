@@ -13,8 +13,17 @@
 			$do_not_duplicate = $post->ID; ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<div class="col-md-8 col-sm-12">
-					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-main' ); ?>
-					<div class="featured first" style="background: url('<?php echo $image[0]; ?>')">
+					<?php $altimage = get_post_meta( $post->ID, '_btm_alt_featured', true ); ?>
+					<?php 
+					if ( $altimage != '') { 
+						$image = $altimage;
+					} 
+					else {
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-main' );
+						$image = $image[0];
+					}
+					?>
+					<div class="featured first" style="background: url('<?php echo $image; ?>')">
 						<div class="title-background">
 							<div class="title">
 								<h2><?php the_title(); ?></h2>
@@ -37,9 +46,19 @@
 				while ($my_query->have_posts()) : $my_query->the_post();
 				$do_not_duplicate = $post->ID; ?>
 
-				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-secondary' ); ?>
+				<?php $altimage = get_post_meta( $post->ID, '_btm_alt_featured', true ); ?>
+				<?php 
+				if ( $altimage != '') { 
+					$image = $altimage;
+				} 
+				else {
+					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-secondary' );
+					$image = $image[0];
+				}
+				?>
+
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<div class="col-md-12 col-sm-6 featured second" style="background: url('<?php echo $image[0]; ?>')">
+					<div class="col-md-12 col-sm-6 featured second" style="background: url('<?php echo $image; ?>')">
 						<div class="title-background">
 							<div class="title">
 								<h4><?php the_title(); ?></h4>
@@ -59,9 +78,19 @@
 				while ($my_query->have_posts()) : $my_query->the_post();
 				$do_not_duplicate = $post->ID; ?>
 
-				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-secondary' ); ?>
+				<?php $altimage = get_post_meta( $post->ID, '_btm_alt_featured', true ); ?>
+				<?php 
+				if ( $altimage != '') { 
+					$image = $altimage;
+				} 
+				else {
+					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-secondary' );
+					$image = $image[0];
+				}
+				?>
+
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<div class="col-md-12 col-sm-6 featured second gap" style="background: url('<?php echo $image[0]; ?>')">
+					<div class="col-md-12 col-sm-6 featured second gap" style="background: url('<?php echo $image; ?>')">
 						<div class="title-background">
 							<div class="title">
 								<h4><?php the_title(); ?></h4>

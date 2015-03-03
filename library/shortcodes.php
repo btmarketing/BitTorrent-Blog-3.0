@@ -18,11 +18,15 @@ function bt_button( $atts, $content = null ) {
       'size' => '',
       'link' => '',
       'tracking' => '',
+      'style' => 'btn-bt',
    ), $atts));
   $the_size = '';
   $the_center ='text-center';
   if ($size == 'large') {
     $the_size = 'btn-lg';
+  }
+  if ($style == 'ghost') {
+    $style = 'btn-bt2';
   }
   elseif ($size == 'small') {
     $the_size = 'btn-sm';
@@ -31,7 +35,7 @@ function bt_button( $atts, $content = null ) {
     $the_center = 'text-left';
   }
 
-  return '<div class="button-wrap ' . $the_center . '"><a href="' . $link . '" target="_blank"><button type="button" class="btn btn-bt ' . $the_size . ' ' . $tracking . '">' . $content . '</button></a></div>';
+  return '<div class="button-wrap ' . $the_center . '"><a href="' . $link . '" target="_blank"><button type="button" class="btn ' . $style . ' ' . $the_size . ' ' . $tracking . '">' . $content . '</button></a></div>';
 }
 
 function bt_gif( $atts, $content = null ) {
