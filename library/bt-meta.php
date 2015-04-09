@@ -194,7 +194,7 @@ $meta_boxes[] =
     'fields' => array(
       array(
         'name' => __( 'Alt Featured Image'),
-        'desc' => __( 'Upload an alt image to display on homepage'),
+        'desc' => __( 'This is optional. This image will be used for the featured and mid-featured secions on the homepage when text is overlayed'),
         'id'   => $prefix . 'alt_featured',
         'type' => 'file',
       ),
