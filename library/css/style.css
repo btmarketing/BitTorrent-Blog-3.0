@@ -7850,6 +7850,9 @@ and more scalable.
 .socialtop .search-form .search-submit {
   display: none;
 }
+.navbar-brand {
+  padding: 0px 5px;
+}
 nav .navbar-header {
   float: none;
   padding: 0 4%;

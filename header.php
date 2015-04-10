@@ -1,3 +1,14 @@
+<?php global $bt_options; ?>
+<?php 
+	$fb = $bt_options['themefb'];
+	$tw = $bt_options['themetwitter'];
+	$yt = $bt_options['themeyoutube'];
+	$ig = $bt_options['themeinstagram'];
+	$gp = $bt_options['themegplus'];
+	$rss = $bt_options['themerss'];
+	$thelogo = $bt_options['themeLogo']['url'];
+?>
+
 <!doctype html>
 
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -89,7 +100,7 @@
                 <span class="icon-bar"></span>
               </button>
 
-              <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><img class="fadeit" height="24px" src="<?php echo get_template_directory_uri() . '/library/images/bt-logo-ret.png'; ?>" /></a>
+              <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><img class="fadeit" height="48px" src="<?php echo $thelogo ?>" /></a>
 
             	<div class="socialtop hidden-xs">
             		<div class="slidesearch">
@@ -102,12 +113,12 @@
 									</form>
 								</div>
 	            	<ul class="sociallist">
-	            		<a target="_blank" href="http://www.facebook.com/bittorrent"><li><i class="fa fa-facebook"></i></li></a>
-	            		<a target="_blank" href="http://www.twitter.com/bittorrent"><li><i class="fa fa-twitter"></i></li></a>
-	            		<a target="_blank" href="http://www.youtube.com/bittorrent"><li><i class="fa fa-youtube-play"></i></li></a>
-	            		<a target="_blank" href="http://www.instagram.com/bittorrent"><li><i class="fa fa-instagram"></i></li></a>
-	            		<a target="_blank" href="https://plus.google.com/+BittorrentInc/posts"><li><i class="fa fa-google-plus"></i></li></a>
-	            		<a target="_blank" href="/rss"><li><i class="fa fa-rss"></i></li></a>
+	            		<?php if ($fb){ ?><a target="_blank" href="<?php echo $fb ?>"><li><i class="fa fa-facebook"></i></li></a><?php } ?>
+	            		<?php if ($tw){ ?><a target="_blank" href="<?php echo $tw ?>"><li><i class="fa fa-twitter"></i></li></a><?php } ?>
+	            		<?php if ($yt){ ?><a target="_blank" href="<?php echo $yt ?>"><li><i class="fa fa-youtube-play"></i></li></a><?php } ?>
+	            		<?php if ($ig){ ?><a target="_blank" href="<?php echo $ig ?>"><li><i class="fa fa-instagram"></i></li></a><?php } ?>
+	            		<?php if ($gp){ ?><a target="_blank" href="<?php echo $gp ?>"><li><i class="fa fa-google-plus"></i></li></a><?php } ?>
+	            		<?php if ($rss){ ?><a target="_blank" href="<?php echo $rss ?>"><li><i class="fa fa-rss"></i></li></a><?php } ?>
 	            	</ul>
 	        
 	            </div>

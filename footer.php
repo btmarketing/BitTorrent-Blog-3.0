@@ -38,7 +38,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-4 copyright">
-              &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.
+              &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
             </div>
             <div class="col-md-4 col-md-offset-4 attribution">
               Built with <a target="_blank" href="http://www.wordpress.org">Wordpress</a>

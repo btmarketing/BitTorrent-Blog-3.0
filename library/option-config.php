@@ -262,6 +262,52 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 				),
 			);
 
+			$this->sections[] = array(
+				'icon' => 'el-icon-folder',
+				'title' => __('Theme Settings', 'brew-framework'),
+				'desc' => __('Custom theme settings'),
+				'fields' => array (
+          array(
+            'id'=>'themeLogo',
+            'type' => 'media', 
+            'url'=> true,
+            'title' => __('Logo', 'redux-framework-demo'),
+            'compiler' => 'true',
+            'desc'=> __('upload logo for theme. Logo itself should be 48px tall and vertically centered in a 96px tall transparent PNG. Logo will appear as 24px tall. This is to account for retina displays.', 'brew-framework'),
+            ),
+          array(
+            'id'=>'themefb',
+            'type' => 'text',
+            'title' => __('Facebook URL', 'brew-framework'),
+          ),
+          array(
+            'id'=>'themetwitter',
+            'type' => 'text',
+            'title' => __('Twitter URL', 'brew-framework'),
+          ),
+          array(
+            'id'=>'themeyoutube',
+            'type' => 'text',
+            'title' => __('YouTube URL', 'brew-framework'),
+          ),
+          array(
+            'id'=>'themeinstagram',
+            'type' => 'text',
+            'title' => __('Instagram URL', 'brew-framework'),
+          ),
+          array(
+            'id'=>'themegplus',
+            'type' => 'text',
+            'title' => __('Google Plus URL', 'brew-framework'),
+          ),
+          array(
+            'id'=>'themerss',
+            'type' => 'text',
+            'title' => __('RSS URL', 'brew-framework'),
+          ),
+        ),
+			);
+
       $this->sections[] = array(
         'icon' => 'el-icon-wrench',
         'title' => __('Modal Settings', 'brew-framework'),
