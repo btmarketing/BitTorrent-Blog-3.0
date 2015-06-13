@@ -1,6 +1,8 @@
 <?php global $bt_options; ?>
 <?php 
 	$fb = $bt_options['themefb'];
+	$url = $bt_options['themeurl'];
+	$ga = $bt_options['themega'];
 	$tw = $bt_options['themetwitter'];
 	$yt = $bt_options['themeyoutube'];
 	$ig = $bt_options['themeinstagram'];
@@ -49,8 +51,8 @@
 
 		<script type="text/javascript">
 			var _gas = _gas || [];
-			_gas.push(['_setAccount', 'UA-31513607-1']); // REPLACE WITH YOUR GA NUMBER
-			_gas.push(['_setDomainName', 'blog.bittorrent.com']); // REPLACE WITH YOUR DOMAIN
+			_gas.push(['_setAccount', '<?php echo $ga ?>']); // REPLACE WITH YOUR GA NUMBER
+			_gas.push(['_setDomainName', '<?php echo $url ?>']); // REPLACE WITH YOUR DOMAIN
 			_gas.push(['_trackPageview']);
 			_gas.push(['_gasTrackForms']);
 			_gas.push(['_gasTrackOutboundLinks']);

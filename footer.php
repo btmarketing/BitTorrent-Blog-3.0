@@ -1,3 +1,4 @@
+
     <footer id="footer" class="clearfix">
 
       <div id="footer-widgets">
@@ -49,6 +50,7 @@
       
       <!-- snippet for enabling/disabling blog-wide modal -->
         <?php global $bt_options ?>
+        <?php $hello = $bt_options['themehello'] ?>
         <?php $PostModalOption = get_post_meta( $post->ID, '_btm_modal_allow', true); ?>
         <?php if ( is_single() && $bt_options['modalSwitch'] == '1' && ( $PostModalOption == 'modal_enabled' || $PostModalOption == '') ) {
           get_template_part( 'themodal'); 
@@ -59,8 +61,16 @@
 
     </footer> <!-- end footer -->
 
+    <?php if ($hello){ ?>
+    
+    <script src="<?php echo $hello ?>" type="text/javascript" charset="utf-8" async="async"></script>
+
+
+    <?php } ?>
+
     <!-- all js scripts are loaded in library/bones.php -->
     <?php wp_footer(); ?>
+
     <!-- Hello? Doctor? Name? Continue? Yesterday? Tomorrow?  -->
 
   </body>

@@ -124,6 +124,8 @@ SCRIPTS & ENQUEUEING
 // loading modernizr and jquery, and reply script
 function bones_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+  global $bt_options; 
+	$thecss = $bt_options['themecss'];
   if (!is_admin()) {
 
     // download a custom file @ getbootstrap.com/customize/ if you don't want all js components
@@ -136,7 +138,7 @@ function bones_scripts_and_styles() {
     wp_register_script( 'bt-isotope', get_template_directory_uri() . '/library/js/libs/jquery.isotope.min.js', array(), '', true );
 
     // register main stylesheet
-    wp_register_style( 'bones-stylesheet', get_template_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+    wp_register_style( 'bones-stylesheet', get_template_directory_uri() . '/library/css/' . $thecss, array(), '', 'all' );
 
     // ie-only style sheet
     wp_register_style( 'bones-ie-only', get_template_directory_uri() . '/library/css/ie.css', array(), '' );
@@ -175,6 +177,12 @@ function bones_scripts_and_styles() {
 
   }
 }
+
+function modify_youtube_embed_url($html) {
+    return str_replace("?feature=oembed", "?feature=oembed&autohide=1&showinfo=0", $html);
+}
+add_filter('oembed_result', 'modify_youtube_embed_url');
+
 
 
 /*********************

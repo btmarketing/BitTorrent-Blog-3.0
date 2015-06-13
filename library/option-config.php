@@ -276,6 +276,30 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
             'desc'=> __('upload logo for theme. Logo itself should be 48px tall and vertically centered in a 96px tall transparent PNG. Logo will appear as 24px tall. This is to account for retina displays.', 'brew-framework'),
             ),
           array(
+            'id'=>'themeurl',
+            'type' => 'text',
+            'title' => __('Theme URL', 'brew-framework'),
+            'desc'=> __('no http needed. ex: blog.bittorrent.com', 'brew-framework'),
+          ),
+          array(
+            'id'=>'themecss',
+            'type' => 'text',
+            'title' => __('Theme CSS file', 'brew-framework'),
+            'desc'=> __('name of file in the css folder that should be used. Include extension (.css) needed. ex: bttheme.css', 'brew-framework'),
+          ),
+          array(
+            'id'=>'themega',
+            'type' => 'text',
+            'title' => __('Theme GA number', 'brew-framework'),
+            'desc'=> __('ex: UA-31513607-3', 'brew-framework'),
+          ),
+         array(
+            'id'=>'themehello',
+            'type' => 'text',
+            'title' => __('Hellobar script source', 'brew-framework'),
+            'desc'=> __('ex: //my.hellobar.com/ed30df265e24846d0b2a277a4b18bbc81cb6623a.js', 'brew-framework'),
+          ),
+          array(
             'id'=>'themefb',
             'type' => 'text',
             'title' => __('Facebook URL', 'brew-framework'),
