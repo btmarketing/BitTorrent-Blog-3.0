@@ -137,6 +137,9 @@ function bones_scripts_and_styles() {
     // isotope
     wp_register_script( 'bt-isotope', get_template_directory_uri() . '/library/js/libs/jquery.isotope.min.js', array(), '', true );
 
+    // hello bar
+    wp_register_script( 'bt-hello', get_template_directory_uri() . '/library/js/hello.js', array(), '', true );
+
     // register main stylesheet
     wp_register_style( 'bones-stylesheet', get_template_directory_uri() . '/library/css/' . $thecss, array(), '', 'all' );
 
@@ -174,6 +177,7 @@ function bones_scripts_and_styles() {
     wp_enqueue_script( 'fitvids');
     wp_enqueue_script( 'fitvids-xtra');
     wp_enqueue_script( 'bt-isotope');
+    wp_enqueue_script( 'bt-hello');
 
   }
 }

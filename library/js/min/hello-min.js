@@ -1,0 +1,1 @@
+jQuery(document).ready(function($){function i(){$(".email-capture").animate({right:"+=420"},200,"swing")}function n(){$(".email-capture").animate({right:"-=420"},200,"swing")}setTimeout(function(){$(window).width()>768&&i()},1e3),$(".email-capture a.modal_close").on("click",function(){n()})});

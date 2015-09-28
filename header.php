@@ -9,6 +9,8 @@
 	$gp = $bt_options['themegplus'];
 	$rss = $bt_options['themerss'];
 	$thelogo = $bt_options['themeLogo']['url'];
+  $favPNG = $bt_options['themeFavPNG']['url'];
+  $favICO = $bt_options['themeFavICO']['url'];
 ?>
 
 <!doctype html>
@@ -33,9 +35,9 @@
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png?v=2">
+		<link rel="icon" href="<?php echo $favPNG ?>">
 		<!--[if IE]>
-			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+			<link rel="shortcut icon" href="<?php echo $favICO ?>">
 		<![endif]-->
 		<?php // or, set /favicon.ico for IE10 win ?>
 		<meta name="msapplication-TileColor" content="#f01d4f">

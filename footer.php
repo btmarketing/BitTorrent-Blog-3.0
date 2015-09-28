@@ -63,8 +63,20 @@
 
     <?php if ($hello){ ?>
     
-    <script src="<?php echo $hello ?>" type="text/javascript" charset="utf-8" async="async"></script>
-
+    <div class="email-capture">
+      <h6>Sign up for the Sync newsletter.</h6>
+      <a class="modal_close">x</a>
+      <span>Become a Sync insider. Have tips, tricks, and updates sent straight to your inbox.</span>
+      <form action="//getsync.us5.list-manage.com/subscribe/post?u=a3baea4e54ff8e8b235488c11&amp;id=9d685f8d9b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <input type="text" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+        <div>
+          <label>I'm using Sync for:</label>
+          <input type="checkbox" value="Business" name="group[113][1]" id="mce-group[113]-113-0" class="interest"><label>Business</label>
+          <input type="checkbox" value="Personal" name="group[113][2]" id="mce-group[113]-113-1" class="interest" checked=""><label>Personal</label>
+        </div>
+        <button class="btn-f" name="subscribe" id="mc-embedded-emailcapture" type="submit">Sign up</button>
+      </form>
+    </div>
 
     <?php } ?>
 

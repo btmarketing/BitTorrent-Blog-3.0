@@ -1,0 +1,93 @@
+// BitTorrent Hello Bar
+//----------------------
+
+div.email-capture {
+  width:380px;
+  height:216px;
+  padding:11px 18px 18px;
+  position:fixed;
+  bottom:60px;
+  right:-400px;
+  background:#fff;
+  .box-shadow(0 1px 3px 2px rgba(0,0,0,0.15));
+  z-index:10000;
+  border-radius: 2px;
+
+  h6 { 
+    margin-bottom:6px !important; 
+    font-size: 14px;
+    line-height:1.5;
+    margin-top: 0;
+  }
+  span, label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #333;
+    display:inline-block;
+    margin-bottom:13px;
+  }
+  label { margin-right:6px; margin-bottom:11px;}
+  button {
+    width:344px !important;
+    height:36px !important;
+  }
+  form {
+    input[type="text"] { 
+      width:100%; 
+      padding:7px; 
+      border:1px solid #ccc;
+      font-size: 14px;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+    input[type="checkbox"] { 
+      margin-right:6px; 
+      font-size: 16px;
+    }
+    input[type="text"]:focus { 
+        color:#333;
+    }
+  }
+  a.modal_close {
+    font-size: 18px;
+    font-style:inherit;
+  }
+
+  .modal_close {
+  color: #999!important;
+  position: absolute;
+  float: right;
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 100;
+  line-height: 100%;
+  right: 14px;
+  top: 7px;
+  text-decoration: none!important;
+  z-index: 10;
+  cursor: pointer;
+  }
+}
+
+@media (max-width:768px){
+  div.email-capture { display:none; }
+}
+
+
+
+.btn-f {
+  font-size: 1.6rem;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  font-weight: 700;
+  width: 210px;
+  height: 50px;
+  background-color: #00bfff;
+  border: none;
+  color: #fff;
+}
