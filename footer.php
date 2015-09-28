@@ -74,7 +74,7 @@
           <input type="checkbox" value="Business" name="group[113][1]" id="mce-group[113]-113-0" class="interest"><label>Business</label>
           <input type="checkbox" value="Personal" name="group[113][2]" id="mce-group[113]-113-1" class="interest" checked=""><label>Personal</label>
         </div>
-        <button class="btn-f" name="subscribe" id="mc-embedded-emailcapture" type="submit">Sign up</button>
+        <button class="btn-f hello-submit" name="subscribe" id="mc-embedded-emailcapture" type="submit">Sign up</button>
       </form>
     </div>
 

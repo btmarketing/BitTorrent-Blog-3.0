@@ -1,14 +1,19 @@
 jQuery(document).ready(function($) { 
 
-	setTimeout(function(){
-		if ($(window).width() > 768){
-			animateHello();
-		}
-	}, 1000)
-
-	$('.email-capture a.modal_close').on('click', function(){
+	$('.hello-submit, .modal_close').on('click', function(){
 		closeHello();
+
+		// Save data to the current session's store
+		sessionStorage.setItem("emailcapture", "captured");
 	})
+
+	console.log()
+
+	if ($(window).width() > 768 && !sessionStorage.getItem('emailcapture')){
+		animateHello();
+	}
+
+
 
 	function animateHello(){
 		$('.email-capture').animate({
