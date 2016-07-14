@@ -129,10 +129,10 @@ add_shortcode('wide', 'make_wide');
 
 /********** ADD GOOGLE FONTS ********************/
 
-add_action('init', 'google_font_style'); 
-  function google_font_style(){ 
-    wp_register_style( 'GoogleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,Source+Sans+Pro:200'); 
-    wp_enqueue_style( 'GoogleFonts' ); 
+add_action('init', 'google_font_style');
+  function google_font_style(){
+    wp_register_style( 'GoogleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,Source+Sans+Pro:200');
+    wp_enqueue_style( 'GoogleFonts' );
  }
 
 /************* ACTIVE SIDEBARS ********************/

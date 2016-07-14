@@ -124,7 +124,7 @@ SCRIPTS & ENQUEUEING
 // loading modernizr and jquery, and reply script
 function bones_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
-  global $bt_options; 
+  global $bt_options;
 	$thecss = $bt_options['themecss'];
   if (!is_admin()) {
 
@@ -336,7 +336,7 @@ function bones_related_posts() {
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
-		foreach( $tags as $tag ) { 
+		foreach( $tags as $tag ) {
 			$tag_arr .= $tag->slug . ',';
 		}
         $args = array(
@@ -367,9 +367,9 @@ function bones_page_navi() {
 	$bignum = 999999999;
 	if ( $wp_query->max_num_pages <= 1 )
 	return;
-	
+
 	echo '<nav class="pagination">';
-	
+
 		echo paginate_links( array(
 			'base' 			=> str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
 			'format' 		=> '',
@@ -381,7 +381,7 @@ function bones_page_navi() {
 			'end_size'		=> 3,
 			'mid_size'		=> 3
 		) );
-	
+
 	echo '</nav>';
 } /* end page navi */
 
