@@ -50,14 +50,10 @@
             <ul class="muted">
               <li><a href="http://www.twitter.com/bitorrentnews" target="_blank">Twitter</a></li>
             </ul>
-            <strong>Contact</strong>
-              <ul>
-                <li><a href="mailto:press@bittorrent.com">press@bittorrent.com</a></li>
+            <strong>Learn more about BitTorrent Live</strong>
+              <ul class="muted">
+                <li><a href="https://btlive.tv/">Official website</a></li>
               </ul>
-            <strong>Press-kit</strong>
-            <ul class="muted">
-              <li><a href="http://apps.bittorrent.com/bittorrent_press_kit.zip" target="_blank">Get the Press Kit</a></li>
-            </ul>
           </div> <!--/press-sidebar-->
         </div> <!--col-md-4-->
       </div> <!--/row-->
